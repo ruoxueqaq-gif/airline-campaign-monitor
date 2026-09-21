@@ -34,27 +34,6 @@
       "travel_period": "",
       "url": "https://act.airchina.com.cn/?activityCode=223376278656&channelCode=3&channelTag=null"
     },
-    "090a85e7e04f66bfba77": {
-      "active": true,
-      "airline": "ANA",
-      "booking_period": "销售至2024年8月13日 旅行期间：2024年9月1日至12月20日 *部分日期除外 from USD1,000 from CNY1,400 检索航班",
-      "content_hash": "2dde29997ae71049903fd9ae65f587012a19332a0affbb4fd717d78d19b169c8",
-      "first_seen": "2026-09-21",
-      "id": "090a85e7e04f66bfba77",
-      "last_changed": "2026-09-21",
-      "matched_destinations": [
-        "日本"
-      ],
-      "matched_origins": [
-        "北京"
-      ],
-      "missing_runs": 0,
-      "relevance": "high",
-      "summary": "NEW 限时特惠 经济舱 北京-东京羽田航线限时促销！ 覆盖红叶季、圣诞节、新年！ 销售期间：销售至2024年8月13日 旅行期间：2024年9月1日至12月20日 *部分日期除外 from USD1,000 from CNY1,400 检索航班",
-      "title": "北京-东京羽田航线限时促销！ 覆盖红叶季、圣诞节、新年！",
-      "travel_period": "2024年9月1日至12月20日 *部分日期除外 from USD1,000 from CNY1,400 检索航班",
-      "url": "https://aswbe-i.ana.co.jp/international_asw/pages/revenue/search/roundtrip/search_roundtrip_input.xhtml?CONNECTION_KIND=CHN&LANG=cn&departureAirportCode:field=PEK&arrivalAirportCode:field=HND&adultCount=1&boardingClass=ECD&searchFlag=0&STATIC=STATIC"
-    },
     "1e71901c90a5a6d216b6": {
       "active": true,
       "airline": "Vietnam Airlines",
@@ -92,26 +71,6 @@
       "title": "KrisFlyer Promotions",
       "travel_period": "",
       "url": "https://www.singaporeair.com/en_UK/cn/plan-travel/promotions/kf-promotions"
-    },
-    "30c7a8e9e90a1ff289ef": {
-      "active": true,
-      "airline": "ANA",
-      "booking_period": "2025年6月3日至7月16日 旅行期限：2025年7月1日至7月30日 *购买期限为搭乘日14天前",
-      "content_hash": "0d41749030c76f0e928d195fcac40c53f80a6c3056d9409aea0af78e07554431",
-      "first_seen": "2026-09-21",
-      "id": "30c7a8e9e90a1ff289ef",
-      "last_changed": "2026-09-21",
-      "matched_destinations": [],
-      "matched_origins": [
-        "上海",
-        "北京"
-      ],
-      "missing_runs": 0,
-      "relevance": "medium",
-      "summary": "北京、上海出发 北美航线公务舱暑期限时好价！ ・北京首都出发：洛杉矶、旧金山、西雅图、纽约、温哥华航线，公务舱往返23,300元起 ・上海出发：洛杉矶、旧金山、西雅图、纽约航线，公务舱往返28,600元起 限时销售：2025年6月3日至7月16日 旅行期限：2025年7月1日至7月30日 *购买期限为搭乘日14天前。 查询航班、购买机票！ * 2023年全日空中国地区官网11.11促销活动的详细信息，将于2023年11月6日在本网站公布。敬请期待！",
-      "title": "北京、上海出发 北美航线公务舱暑期限时好价！",
-      "travel_period": "2025年7月1日至7月30日 *购买期限为搭乘日14天前",
-      "url": "https://aswbe.ana.co.jp/webapps/reservation/flight-search?CONNECTION_KIND=CHN&LANG=cn"
     },
     "361f4216db971439647d": {
       "active": true,
@@ -245,25 +204,6 @@
       "title": "早鸟优惠 - 提前预订，最高可享15%折扣",
       "travel_period": "",
       "url": "https://www.vietnamairlines.com/zh-cn/early-bird-specials-vietnam-airlines"
-    },
-    "5ff7b0ffb81999c06913": {
-      "active": true,
-      "airline": "ANA",
-      "booking_period": "2024年12月10日至2024年12月16日 旅行期间：2025年1月6日至2025年6月30日 *部分日期除外 from USD1,000 from CNY270 详细信息 详细信息 检索航班 f",
-      "content_hash": "75819b90e244820208c9b2a9b43fd0f9ff12ac57a35672a79180cbd309039013",
-      "first_seen": "2026-09-21",
-      "id": "5ff7b0ffb81999c06913",
-      "last_changed": "2026-09-21",
-      "matched_destinations": [
-        "日本"
-      ],
-      "matched_origins": [],
-      "missing_runs": 0,
-      "relevance": "medium",
-      "summary": "经济舱 日本国内航线特惠价格促销中！ 轻松飞往日本各地！ 销售期间：2024年12月10日至2024年12月16日 旅行期间：2025年1月6日至2025年6月30日 *部分日期除外 from USD1,000 from CNY270 详细信息 详细信息 检索航班 from USD1,000 详情请点击此处",
-      "title": "日本国内航线特惠价格促销中！ 轻松飞往日本各地！",
-      "travel_period": "2025年1月6日至2025年6月30日 *部分日期除外 from USD1,000 from CNY270 详细信息 详细信息 检索航班 from USD1,000 详情请点击此处",
-      "url": "https://www.ana.co.jp/zh/cn/plan-book/promotions/special-fares"
     },
     "66ff6f23c9e6093d0093": {
       "active": true,
@@ -416,28 +356,6 @@
       "title": "Travel Deals under $200 ZH",
       "travel_period": "",
       "url": "https://www.flyscoot.com/flights/en-sg/scoot-travel-deals?utm_source=website&utm_medium=homepage_promo_tile&utm_campaign=scoot_travel_deals"
-    },
-    "7d8be30bb86bf88ef887": {
-      "active": true,
-      "airline": "ANA",
-      "booking_period": "再享最高300元立减优惠！ 销售期间：销售至2024年8月31日 旅行期间：2024年9月1日至2024年9月27日 *部分日期除外 from USD1,000 from CNY3,200 详情请点击",
-      "content_hash": "3e9f2655bf9f2389e796bde07f9143df8a53d2e35736a03169772b313018647c",
-      "first_seen": "2026-09-21",
-      "id": "7d8be30bb86bf88ef887",
-      "last_changed": "2026-09-21",
-      "matched_destinations": [],
-      "matched_origins": [
-        "上海",
-        "北京",
-        "广州",
-        "深圳"
-      ],
-      "missing_runs": 0,
-      "relevance": "medium",
-      "summary": "NEW 限时特惠 经济舱 北京、上海、广州、深圳、青岛出发 美西美东特价升级延长，错峰出行即刻启程！ 银联卡领券购票再享最高300元立减优惠！ 销售期间：销售至2024年8月31日 旅行期间：2024年9月1日至2024年9月27日 *部分日期除外 from USD1,000 from CNY3,200 详情请点击此处",
-      "title": "北京、上海、广州、深圳、青岛出发 美西美东特价升级延长，错峰出行即刻启程！ 银联卡领券购票再享最高300元立减优惠！",
-      "travel_period": "即刻启程！ 银联卡领券购票再享最高300元立减优惠！ 销售期间：销售至2024年8月31日 旅行期间：2024年9月1日至2024年9月27日 *部分日期除外 from USD1,000 from C",
-      "url": "https://www.ana.co.jp/zh/cn/plan-book/promotions/summer-us-special-fares-more-discount"
     },
     "81778435d19c43961023": {
       "active": true,
@@ -640,46 +558,6 @@
       "title": "国航同行惠",
       "travel_period": "",
       "url": "https://act.airchina.com.cn/?activityCode=208334705792&channelCode=3&channelTag=null"
-    },
-    "e506ac9980874a9b8453": {
-      "active": true,
-      "airline": "ANA",
-      "booking_period": "至2025年3月31日，旅行日期至2025年6月30日 ・覆盖圣诞节、元旦、寒假、春节、清明节、端午节 ・在日本，往返可各免费停留一次 ・出发当天可订 3,000元 起 2,900元 起 详细信息 *",
-      "content_hash": "b8653a4f6196898bf6c709ade3a9dfcb8f559e59756553e12bf9854e998b38c8",
-      "first_seen": "2026-09-21",
-      "id": "e506ac9980874a9b8453",
-      "last_changed": "2026-09-21",
-      "matched_destinations": [
-        "日本"
-      ],
-      "matched_origins": [],
-      "missing_runs": 0,
-      "relevance": "medium",
-      "summary": "美国（含夏威夷）、加拿大单程、往返机票特价 单程3,000元起、往返3,500元起！ ・销售至2025年3月31日，旅行日期至2025年6月30日 ・覆盖圣诞节、元旦、寒假、春节、清明节、端午节 ・在日本，往返可各免费停留一次 ・出发当天可订 3,000元 起 2,900元 起 详细信息 * 2023年全日空中国地区官网11.11促销活动的详细信息，将于2023年11月6日在本网站公布。敬请期待！",
-      "title": "美国（含夏威夷）、加拿大单程、往返机票特价 单程3,000元起、往返3,500元起！",
-      "travel_period": "至2025年6月30日 ・覆盖圣诞节、元旦、寒假、春节、清明节、端午节 ・在日本，往返可各免费停留一次 ・出发当天可订 3,000元 起 2,900元 起 详细信息 * 2023年全日空中国地区官网1",
-      "url": "https://www.ana.co.jp/zh/cn/plan-book/promotions/us-ca-special-fares"
-    },
-    "e7b4cf9c6f1c4ec278a3": {
-      "active": true,
-      "airline": "ANA",
-      "booking_period": "2025年4月23日至4月30日 ・适用航线：广州出发飞往日本国内各城市 ・旅行日期：2025年5月10日至7月10日 880元 起 3,620元 起 查询航班、购买机票！ * 2023年全日空中国地",
-      "content_hash": "9319ae96104392721f7d0a9794f96f2bfa28761ad96e97dfcfa88a2a1cfab1d9",
-      "first_seen": "2026-09-21",
-      "id": "e7b4cf9c6f1c4ec278a3",
-      "last_changed": "2026-09-21",
-      "matched_destinations": [
-        "日本"
-      ],
-      "matched_origins": [
-        "广州"
-      ],
-      "missing_runs": 0,
-      "relevance": "high",
-      "summary": "广州航线通航20周年庆特惠 ・限时销售：2025年4月23日至4月30日 ・适用航线：广州出发飞往日本国内各城市 ・旅行日期：2025年5月10日至7月10日 880元 起 3,620元 起 查询航班、购买机票！ * 2023年全日空中国地区官网11.11促销活动的详细信息，将于2023年11月6日在本网站公布。敬请期待！",
-      "title": "广州航线通航20周年庆特惠",
-      "travel_period": "航线：广州出发飞往日本国内各城市 ・旅行日期：2025年5月10日至7月10日 880元 起 3,620元 起 查询航班、购买机票！ * 2023年全日空中国地区官网11.11促销活动的详细信息，将于",
-      "url": "https://aswbe.ana.co.jp/webapps/reservation/flight-search?CONNECTION_KIND=CHN&LANG=cn&origin=CAN&destination=HND"
     },
     "f4937f0688baa616e830": {
       "active": true,

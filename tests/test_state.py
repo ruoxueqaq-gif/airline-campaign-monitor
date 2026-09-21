@@ -39,6 +39,13 @@ def test_expired_requires_two_successful_missing_runs():
     assert changes == []
     state, changes = reconcile(state, [], {"ANA"}, today="2026-09-03")
     assert [item.kind for item in changes] == ["EXPIRED"]
+    assert state["campaigns"] == {}
+
+
+def test_explicitly_past_campaign_is_not_saved():
+    state, changes = reconcile(empty_state(), [campaign(booking="2025-01-01 至 2025-01-10")], {"ANA"}, today="2026-09-21")
+    assert state["campaigns"] == {}
+    assert changes == []
 
 
 def test_failed_airline_is_not_marked_missing():
@@ -46,4 +53,3 @@ def test_failed_airline_is_not_marked_missing():
     next_state, changes = reconcile(state, [], set(), today="2026-09-02")
     assert changes == []
     assert next_state == state
-

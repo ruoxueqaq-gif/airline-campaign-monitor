@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 
 from .models import Campaign, Change
+from .deals import record_is_expired
 
 SCHEMA_VERSION = 1
 EXPIRE_AFTER_MISSES = 2
@@ -37,7 +38,15 @@ def reconcile(
     changes: list[Change] = []
     seen_ids: set[str] = set()
 
+    for campaign_id, old in list(records.items()):
+        if record_is_expired(old, date.fromisoformat(today)):
+            del records[campaign_id]
+            changes.append(Change("EXPIRED", old.copy()))
+
     for campaign in current:
+        fresh_record = campaign.to_record(today)
+        if record_is_expired(fresh_record, date.fromisoformat(today)):
+            continue
         campaign_id = campaign.campaign_id
         seen_ids.add(campaign_id)
         old = records.get(campaign_id)
@@ -61,9 +70,9 @@ def reconcile(
         missing_runs = int(old.get("missing_runs", 0)) + 1
         old["missing_runs"] = missing_runs
         if missing_runs >= EXPIRE_AFTER_MISSES:
-            old["active"] = False
             old["last_changed"] = today
             changes.append(Change("EXPIRED", old.copy()))
+            del records[campaign_id]
 
     state["campaigns"] = dict(sorted(records.items()))
     return state, changes

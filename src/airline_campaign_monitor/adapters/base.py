@@ -11,7 +11,7 @@ from ..http import HttpClient
 from ..models import Campaign, compact_text
 
 DATE_RANGE_PATTERNS = (
-    re.compile(r"(?:销售|购票|预订|出票)(?:日期|期间|时间|期限)?[：:]?\s*([^。；\n]{4,100})", re.I),
+    re.compile(r"(?:销售|购票|预订|预定|出票)(?:日期|期间|时间|期限)?[：:]?\s*([^。；\n]{4,100})", re.I),
     re.compile(r"(?:book(?:ing)?|sale)\s+(?:period|dates?)?[：:]?\s*([^.;\n]{4,100})", re.I),
 )
 TRAVEL_RANGE_PATTERNS = (
