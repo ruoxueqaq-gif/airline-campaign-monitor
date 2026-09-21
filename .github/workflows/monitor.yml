@@ -34,9 +34,9 @@ jobs:
       - name: Monitor official campaigns
         run: python -m airline_campaign_monitor.monitor
 
-      - name: Commit state only when changed
+      - name: Commit data only when changed
         run: |
-          git add data/campaigns.json
+          git add data/campaigns.json data/campaigns.csv
           if git diff --cached --quiet; then
             echo "Campaign state unchanged."
             exit 0
@@ -51,4 +51,3 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh issue create --title "航空公司官方促销有变化 ($(date -u +%F))" --body-file runtime/change.md
-

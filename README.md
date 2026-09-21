@@ -22,7 +22,9 @@
 - HTTP 请求配置 User-Agent、连接/读取 timeout，以及针对 429/5xx 的重试退避。
 - 解析活动卡片的标题、链接、摘要、购票期、旅行期和关注地区，不使用整页 HTML hash。
 - 只接受对应航空公司的官方域名链接。
-- 状态保存在 `data/campaigns.json`。内容完全不变时不会重写文件，因此 GitHub Actions 不会产生空提交。
+- 机器使用的完整状态保存在 `data/campaigns.json`；方便人工查看的同步表格保存在 `data/campaigns.csv`。
+- CSV 使用带 BOM 的 UTF-8 编码，可直接用 Excel 打开中文内容；包含航司、标题、状态、关注度、出发地、目的地、购票期、旅行期、链接和摘要。
+- JSON 和 CSV 内容完全不变时都不会重写，因此 GitHub Actions 不会产生空提交。
 - 某活动连续两次在**成功抓取**的同一航司页面中消失后才标记 `EXPIRED`，降低官网短暂缺块导致的误报。
 - 第一次运行只保存 baseline；第二次起有变化才生成 `runtime/change.md` 并创建 GitHub Issue。
 
@@ -46,7 +48,7 @@ pytest -q
 
 `.github/workflows/monitor.yml` 支持手动 `workflow_dispatch`，并按中国标准时间每天约 `01:20`、`09:20`、`17:20` 运行。工作流需要仓库允许 GitHub Actions 对 contents 和 issues 写入；权限已在 workflow 中声明。
 
-运行顺序：抓取 → 更新 state → state 有变化才 commit/push → 有 NEW/UPDATED/EXPIRED 才创建 Issue。首次 baseline 会提交 state，但不会创建 Issue。
+运行顺序：抓取 → 更新 JSON 与 CSV → 数据文件有变化才 commit/push → 有 NEW/UPDATED/EXPIRED 才创建 Issue。首次 baseline 会提交数据，但不会创建 Issue。
 
 ## 状态与变化判定
 

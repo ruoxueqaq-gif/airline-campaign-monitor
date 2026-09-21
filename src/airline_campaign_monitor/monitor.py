@@ -5,12 +5,14 @@ from pathlib import Path
 import sys
 
 from .adapters import ALL_ADAPTERS
+from .csv_export import save_csv_if_changed
 from .http import HttpClient
 from .report import write_report
 from .state import load_state, reconcile, save_state_if_changed
 
 
-def run(state_path: Path, report_path: Path) -> int:
+def run(state_path: Path, report_path: Path, csv_path: Path | None = None) -> int:
+    csv_path = csv_path or state_path.with_suffix(".csv")
     old_state, is_baseline = load_state(state_path)
     client = HttpClient()
     campaigns = []
@@ -34,6 +36,7 @@ def run(state_path: Path, report_path: Path) -> int:
 
     new_state, changes = reconcile(old_state, campaigns, successful_airlines)
     state_changed = save_state_if_changed(state_path, old_state, new_state)
+    csv_changed = save_csv_if_changed(csv_path, new_state)
     report_path.unlink(missing_ok=True)
 
     if is_baseline:
@@ -45,6 +48,7 @@ def run(state_path: Path, report_path: Path) -> int:
         print("[NO CHANGE] 未发现促销变化。")
 
     print(f"[STATE] {'changed' if state_changed else 'unchanged'}")
+    print(f"[CSV] {'changed' if csv_changed else 'unchanged'}: {csv_path}")
     if failures:
         print(f"[PARTIAL] {len(failures)} 家失败，其余结果已处理。", file=sys.stderr)
     return 0
@@ -53,11 +57,11 @@ def run(state_path: Path, report_path: Path) -> int:
 def main() -> int:
     parser = argparse.ArgumentParser(description="Monitor official airline campaigns")
     parser.add_argument("--state", type=Path, default=Path("data/campaigns.json"))
+    parser.add_argument("--csv", type=Path, default=Path("data/campaigns.csv"))
     parser.add_argument("--report", type=Path, default=Path("runtime/change.md"))
     args = parser.parse_args()
-    return run(args.state, args.report)
+    return run(args.state, args.report, args.csv)
 
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

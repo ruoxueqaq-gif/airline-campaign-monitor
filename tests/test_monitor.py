@@ -28,13 +28,18 @@ class BaselineAdapter:
 
 def test_first_run_builds_baseline_without_report(tmp_path, monkeypatch):
     state_path = tmp_path / "campaigns.json"
+    csv_path = tmp_path / "campaigns.csv"
     report_path = tmp_path / "change.md"
     monkeypatch.setattr(monitor, "ALL_ADAPTERS", (BaselineAdapter,))
 
     assert monitor.run(state_path, report_path) == 0
     assert state_path.exists()
+    assert csv_path.exists()
     assert not report_path.exists()
     assert len(json.loads(state_path.read_text(encoding="utf-8"))["campaigns"]) == 1
+    csv_text = csv_path.read_text(encoding="utf-8-sig")
+    assert "airline,title,status" in csv_text
+    assert "Test Air,上海飞新加坡促销,ACTIVE" in csv_text
 
 
 def test_new_campaign_creates_new_report(tmp_path, monkeypatch):
@@ -97,4 +102,3 @@ def test_one_adapter_failure_does_not_block_others(tmp_path, monkeypatch):
     report = report_path.read_text(encoding="utf-8")
     assert "上海飞悉尼促销" in report
     assert "Broken Air" in report
-
