@@ -26,10 +26,17 @@ CSV_COLUMNS = (
     "summary",
 )
 
+CSV_HEADERS = {
+    "airline": "航空公司", "title": "促销标题", "status": "状态", "deal_strength": "优惠力度",
+    "deal_highlights": "优惠亮点", "relevance": "相关性", "origins": "出发地",
+    "destinations": "目的地", "booking_period": "预订日期", "travel_period": "旅行日期",
+    "first_seen": "首次发现时间", "last_changed": "最后更新时间", "url": "官方链接", "summary": "摘要",
+}
+
 
 def render_csv(state: dict, *, best_only: bool = False) -> bytes:
     buffer = StringIO(newline="")
-    writer = csv.DictWriter(buffer, fieldnames=CSV_COLUMNS, lineterminator="\n")
+    writer = csv.DictWriter(buffer, fieldnames=[CSV_HEADERS[name] for name in CSV_COLUMNS], lineterminator="\n")
     writer.writeheader()
     records = []
     for item in state["campaigns"].values():
@@ -55,8 +62,7 @@ def render_csv(state: dict, *, best_only: bool = False) -> bytes:
         records = list(deduplicated.values())
     records.sort(key=lambda pair: (-pair[1].score, pair[0].get("airline", ""), pair[0].get("title", "")))
     for record, assessment in records:
-        writer.writerow(
-            {
+        row = {
                 "airline": record.get("airline", ""),
                 "title": record.get("title", ""),
                 "status": "ACTIVE" if record.get("active", True) else "EXPIRED",
@@ -72,7 +78,7 @@ def render_csv(state: dict, *, best_only: bool = False) -> bytes:
                 "url": record.get("url", ""),
                 "summary": record.get("summary", ""),
             }
-        )
+        writer.writerow({CSV_HEADERS[key]: value for key, value in row.items()})
     return buffer.getvalue().encode("utf-8-sig")
 
 
