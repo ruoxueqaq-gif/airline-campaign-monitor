@@ -135,9 +135,18 @@ def assess_deal(record: dict) -> DealAssessment:
         score = max(score, 5)
         highlights.append("含免费航段/机票权益")
 
-    if score == 0 and any(term in lowered for term in ("限时特惠", "特价", "special fare", "flash sale")):
-        score = 1
+    explicit_price = bool(re.search(
+        r"(?:[¥￥$€£]|cny|rmb|usd|aud|nzd|jpy|sgd|thb)\s*\d[\d,.]*|\d[\d,.]*\s*(?:元|人民币|美元|澳元|纽元|日元|新币|泰铢)(?:起|起售|起价)?",
+        text,
+        re.I,
+    ))
+    if explicit_price:
+        score = max(score, 3)
+        highlights.append("公布明确价格")
+
+    if score == 0 and any(term in lowered for term in ("限时特惠", "特价", "special fare", "flash sale", "sale", "折扣码", "promo code")):
+        score = 2
         highlights.append("官方特惠价")
 
-    strength = "HIGH" if score >= 4 else "MEDIUM" if score >= 2 else "NORMAL"
+    strength = "GREAT" if score >= 4 else "GOOD" if score >= 2 else "NORMAL"
     return DealAssessment(strength, score, tuple(dict.fromkeys(highlights)), flight_related)

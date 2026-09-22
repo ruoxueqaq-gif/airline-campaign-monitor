@@ -53,3 +53,14 @@ def test_failed_airline_is_not_marked_missing():
     next_state, changes = reconcile(state, [], set(), today="2026-09-02")
     assert changes == []
     assert next_state == state
+
+
+def test_scoring_metadata_migration_does_not_create_content_change():
+    state, _ = reconcile(empty_state(), [campaign()], {"ANA"}, today="2026-09-01")
+    record = next(iter(state["campaigns"].values()))
+    record["content_hash"] = "legacy-hash"
+    record["relevance"] = "medium"
+    record.pop("notify", None)
+
+    _, changes = reconcile(state, [campaign()], {"ANA"}, today="2026-09-02")
+    assert changes == []

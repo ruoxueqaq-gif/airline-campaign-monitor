@@ -20,7 +20,14 @@ class Campaign:
     travel_period: str = ""
     matched_origins: tuple[str, ...] = field(default_factory=tuple)
     matched_destinations: tuple[str, ...] = field(default_factory=tuple)
-    relevance: str = "general"
+    relevance: str = "LOW"
+    deal_strength: str = "NORMAL"
+    has_explicit_price: bool = False
+    has_promotion: bool = False
+    core_route_change: bool = False
+    notify: bool = False
+    reason: str = ""
+    relevance_score: int = 0
 
     @property
     def campaign_id(self) -> str:
@@ -34,9 +41,6 @@ class Campaign:
             "summary": compact_text(self.summary),
             "booking_period": compact_text(self.booking_period),
             "travel_period": compact_text(self.travel_period),
-            "matched_origins": sorted(self.matched_origins),
-            "matched_destinations": sorted(self.matched_destinations),
-            "relevance": self.relevance,
         }
         encoded = json.dumps(payload, ensure_ascii=False, sort_keys=True)
         return sha256(encoded.encode("utf-8")).hexdigest()
@@ -45,6 +49,8 @@ class Campaign:
         record = asdict(self)
         record["matched_origins"] = list(self.matched_origins)
         record["matched_destinations"] = list(self.matched_destinations)
+        record["origin_match"] = list(self.matched_origins)
+        record["destination_match"] = list(self.matched_destinations)
         record.update(
             {
                 "id": self.campaign_id,

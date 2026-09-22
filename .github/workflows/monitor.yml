@@ -50,4 +50,11 @@ jobs:
         if: ${{ hashFiles('runtime/change.md') != '' }}
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh issue create --title "航空公司官方促销有变化 ($(date -u +%F))" --body-file runtime/change.md
+          TZ: Asia/Shanghai
+        run: |
+          gh label create alert --description "Automated monitoring alert" --color D73A4A --force
+          gh issue create \
+            --title "[ALERT] 航司促销活动更新 - $(date +%F)" \
+            --body-file runtime/change.md \
+            --assignee ruoxueqaq-gif \
+            --label alert

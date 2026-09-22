@@ -27,14 +27,14 @@ def test_unstructured_historical_footnote_does_not_expire_ongoing_offer():
     assert record_is_expired(record, date(2026, 9, 21)) is False
 
 
-def test_large_discount_is_high_strength():
+def test_large_discount_is_great_strength():
     result = assess_deal({"airline": "AirAsia", "title": "所有航班最高27%折扣", "summary": "Value Pack最高30%折扣"})
-    assert result.strength == "HIGH"
+    assert result.strength == "GREAT"
     assert result.score >= 4
     assert result.flight_related is True
 
 
 def test_non_flight_discount_is_not_a_best_fare():
     result = assess_deal({"airline": "Singapore Airlines", "title": "额外行李优惠", "summary": "Baggage allowance 15% off"})
-    assert result.strength == "HIGH"
+    assert result.strength == "GREAT"
     assert result.flight_related is False

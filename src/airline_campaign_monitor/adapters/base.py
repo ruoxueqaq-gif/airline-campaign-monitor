@@ -6,7 +6,7 @@ from urllib.parse import urljoin, urlparse, urlunparse
 
 from bs4 import BeautifulSoup, Tag
 
-from ..focus import PROMO_TERMS, classify
+from ..focus import FREQUENCY_TERMS, NEW_ROUTE_TERMS, PROMO_TERMS, analyze
 from ..http import HttpClient
 from ..models import Campaign, compact_text
 
@@ -90,7 +90,7 @@ class BaseAdapter(ABC):
         if not url or not self._allowed(url):
             return None
         summary = body[:800]
-        origins, destinations, relevance = classify(f"{title} {summary}", self.airline)
+        focus = analyze(f"{title} {summary}", self.airline)
         return Campaign(
             airline=self.airline,
             title=title,
@@ -98,15 +98,22 @@ class BaseAdapter(ABC):
             summary=summary,
             booking_period=self._extract_period(summary, DATE_RANGE_PATTERNS),
             travel_period=self._extract_period(summary, TRAVEL_RANGE_PATTERNS),
-            matched_origins=origins,
-            matched_destinations=destinations,
-            relevance=relevance,
+            matched_origins=focus.origins,
+            matched_destinations=focus.destinations,
+            relevance=focus.relevance,
+            deal_strength=focus.deal_strength,
+            has_explicit_price=focus.explicit_price,
+            has_promotion=focus.promotion,
+            core_route_change=focus.core_route_change,
+            notify=focus.notify,
+            reason=focus.reason,
+            relevance_score=focus.score,
         )
 
     @staticmethod
     def _looks_promotional(text: str) -> bool:
         lowered = compact_text(text).lower()
-        return any(term in lowered for term in PROMO_TERMS)
+        return any(term in lowered for term in (*PROMO_TERMS, *NEW_ROUTE_TERMS, *FREQUENCY_TERMS))
 
     def _allowed(self, url: str) -> bool:
         hostname = (urlparse(url).hostname or "").lower()

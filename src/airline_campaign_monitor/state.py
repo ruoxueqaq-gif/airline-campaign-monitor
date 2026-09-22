@@ -10,6 +10,12 @@ from .deals import record_is_expired
 
 SCHEMA_VERSION = 1
 EXPIRE_AFTER_MISSES = 2
+SOURCE_FIELDS = ("title", "summary", "booking_period", "travel_period")
+
+
+def _source_changed(old: dict, candidate: dict) -> bool:
+    """Ignore scoring-only migrations when deciding whether content changed."""
+    return any(str(old.get(key) or "").strip() != str(candidate.get(key) or "").strip() for key in SOURCE_FIELDS)
 
 
 def empty_state() -> dict:
@@ -41,7 +47,7 @@ def reconcile(
     for campaign_id, old in list(records.items()):
         if record_is_expired(old, date.fromisoformat(today)):
             del records[campaign_id]
-            changes.append(Change("EXPIRED", old.copy()))
+            changes.append(Change("EXPIRED", old.copy(), old.copy()))
 
     for campaign in current:
         fresh_record = campaign.to_record(today)
@@ -59,7 +65,7 @@ def reconcile(
         candidate = campaign.to_record(old.get("first_seen", today))
         candidate["first_seen"] = old.get("first_seen", today)
         candidate["last_changed"] = old.get("last_changed", today)
-        if old.get("content_hash") != candidate["content_hash"] or not old.get("active", True):
+        if _source_changed(old, candidate) or not old.get("active", True):
             candidate["last_changed"] = today
             changes.append(Change("UPDATED", candidate, old))
         records[campaign_id] = candidate
@@ -71,7 +77,7 @@ def reconcile(
         old["missing_runs"] = missing_runs
         if missing_runs >= EXPIRE_AFTER_MISSES:
             old["last_changed"] = today
-            changes.append(Change("EXPIRED", old.copy()))
+            changes.append(Change("EXPIRED", old.copy(), old.copy()))
             del records[campaign_id]
 
     state["campaigns"] = dict(sorted(records.items()))

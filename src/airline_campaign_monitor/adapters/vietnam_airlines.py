@@ -2,7 +2,7 @@ import json
 
 from bs4 import BeautifulSoup
 
-from ..focus import classify
+from ..focus import analyze
 from ..models import Campaign, compact_text
 from .base import BaseAdapter
 
@@ -25,7 +25,7 @@ class VietnamAirlinesAdapter(BaseAdapter):
                 url = self._normalise_url(str(item.get("ctaDirect") or ""), self.source_urls[0])
                 if not title or not url or not self._allowed(url) or not self._looks_promotional(f"{title} {summary}"):
                     continue
-                origins, destinations, relevance = classify(f"{title} {summary}", self.airline)
+                focus = analyze(f"{title} {summary}", self.airline)
                 start = str(item.get("effectiveStartDate") or "")[:10]
                 end = str(item.get("effectiveEndDate") or "")[:10]
                 campaign = Campaign(
@@ -34,9 +34,16 @@ class VietnamAirlinesAdapter(BaseAdapter):
                     url=url,
                     summary=summary,
                     booking_period=" 至 ".join(value for value in (start, end) if value),
-                    matched_origins=origins,
-                    matched_destinations=destinations,
-                    relevance=relevance,
+                    matched_origins=focus.origins,
+                    matched_destinations=focus.destinations,
+                    relevance=focus.relevance,
+                    deal_strength=focus.deal_strength,
+                    has_explicit_price=focus.explicit_price,
+                    has_promotion=focus.promotion,
+                    core_route_change=focus.core_route_change,
+                    notify=focus.notify,
+                    reason=focus.reason,
+                    relevance_score=focus.score,
                 )
                 output[campaign.campaign_id] = campaign
         if not output:

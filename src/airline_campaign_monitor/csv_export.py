@@ -18,6 +18,9 @@ CSV_COLUMNS = (
     "relevance",
     "origins",
     "destinations",
+    "has_explicit_price",
+    "notify",
+    "reason",
     "booking_period",
     "travel_period",
     "first_seen",
@@ -28,8 +31,9 @@ CSV_COLUMNS = (
 
 CSV_HEADERS = {
     "airline": "航空公司", "title": "促销标题", "status": "状态", "deal_strength": "优惠力度",
-    "deal_highlights": "优惠亮点", "relevance": "相关性", "origins": "出发地",
-    "destinations": "目的地", "booking_period": "预订日期", "travel_period": "旅行日期",
+    "deal_highlights": "优惠亮点", "relevance": "相关度", "origins": "出发地", "destinations": "目的地",
+    "has_explicit_price": "是否有明确价格", "notify": "是否通知", "reason": "判断原因",
+    "booking_period": "预订日期", "travel_period": "旅行日期",
     "first_seen": "首次发现时间", "last_changed": "最后更新时间", "url": "官方链接", "summary": "摘要",
 }
 
@@ -43,7 +47,7 @@ def render_csv(state: dict, *, best_only: bool = False) -> bytes:
         if record_is_expired(item):
             continue
         assessment = assess_deal(item)
-        if best_only and (assessment.strength != "HIGH" or not assessment.flight_related):
+        if best_only and (assessment.strength != "GREAT" or not assessment.flight_related):
             continue
         records.append((item, assessment))
     if best_only:
@@ -66,11 +70,14 @@ def render_csv(state: dict, *, best_only: bool = False) -> bytes:
                 "airline": record.get("airline", ""),
                 "title": record.get("title", ""),
                 "status": "ACTIVE" if record.get("active", True) else "EXPIRED",
-                "deal_strength": assessment.strength,
+                "deal_strength": record.get("deal_strength") or assessment.strength,
                 "deal_highlights": "；".join(assessment.highlights),
-                "relevance": record.get("relevance", "general"),
-                "origins": "、".join(record.get("matched_origins", [])),
-                "destinations": "、".join(record.get("matched_destinations", [])),
+                "relevance": record.get("relevance", "LOW"),
+                "origins": "、".join(record.get("origin_match") or record.get("matched_origins", [])),
+                "destinations": "、".join(record.get("destination_match") or record.get("matched_destinations", [])),
+                "has_explicit_price": "是" if record.get("has_explicit_price") else "否",
+                "notify": "是" if record.get("notify") else "否",
+                "reason": record.get("reason", ""),
                 "booking_period": record.get("booking_period", ""),
                 "travel_period": record.get("travel_period", ""),
                 "first_seen": record.get("first_seen", ""),

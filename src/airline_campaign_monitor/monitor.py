@@ -46,11 +46,18 @@ def run(
     best_deals_changed = save_csv_if_changed(best_deals_path, new_state, best_only=True)
     report_path.unlink(missing_ok=True)
 
+    notification_changes = [change for change in changes if change.campaign.get("notify", False)]
+
     if is_baseline:
         print(f"[BASELINE] 已保存 {len(campaigns)} 条现有活动，不发送通知。")
+    elif notification_changes:
+        write_report(report_path, notification_changes)
+        print(
+            f"[CHANGE] 共 {len(changes)} 条状态变化，其中 {len(notification_changes)} 条满足通知规则；"
+            f"报告已写入 {report_path}"
+        )
     elif changes:
-        write_report(report_path, changes, failures)
-        print(f"[CHANGE] {len(changes)} 条变化，报告已写入 {report_path}")
+        print(f"[CHANGE] {len(changes)} 条状态变化均为低相关内容，仅记录，不发送通知。")
     else:
         print("[NO CHANGE] 未发现促销变化。")
 

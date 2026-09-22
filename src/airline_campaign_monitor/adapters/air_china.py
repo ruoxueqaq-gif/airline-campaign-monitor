@@ -1,4 +1,4 @@
-from ..focus import classify
+from ..focus import analyze
 from ..models import Campaign, compact_text
 from .base import BaseAdapter
 
@@ -27,16 +27,23 @@ class AirChinaAdapter(BaseAdapter):
                 ticket_related = any(term in text for term in ("特惠", "优惠", "畅飞", "航线", "直飞", "次卡", "机票"))
                 if not title or not url or not self._allowed(url) or not ticket_related:
                     continue
-                origins, destinations, relevance = classify(text, self.airline)
+                focus = analyze(text, self.airline)
                 output.append(
                     Campaign(
                         airline=self.airline,
                         title=title,
                         url=url,
                         summary=summary,
-                        matched_origins=origins,
-                        matched_destinations=destinations,
-                        relevance=relevance,
+                        matched_origins=focus.origins,
+                        matched_destinations=focus.destinations,
+                        relevance=focus.relevance,
+                        deal_strength=focus.deal_strength,
+                        has_explicit_price=focus.explicit_price,
+                        has_promotion=focus.promotion,
+                        core_route_change=focus.core_route_change,
+                        notify=focus.notify,
+                        reason=focus.reason,
+                        relevance_score=focus.score,
                     )
                 )
         if not output:

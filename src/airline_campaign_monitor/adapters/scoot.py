@@ -1,6 +1,6 @@
 import json
 
-from ..focus import classify
+from ..focus import analyze
 from ..models import Campaign, compact_text
 from .base import BaseAdapter
 
@@ -21,16 +21,23 @@ class ScootAdapter(BaseAdapter):
             url = self._normalise_url(str(item.get("LinkUrl") or item.get("ItemDefaultUrl") or ""), self.source_urls[0])
             if not title or not url or not self._allowed(url) or not self._looks_promotional(f"{title} {summary}"):
                 continue
-            origins, destinations, relevance = classify(f"{title} {summary}", self.airline)
+            focus = analyze(f"{title} {summary}", self.airline)
             output.append(
                 Campaign(
                     airline=self.airline,
                     title=title,
                     url=url,
                     summary=summary,
-                    matched_origins=origins,
-                    matched_destinations=destinations,
-                    relevance=relevance,
+                    matched_origins=focus.origins,
+                    matched_destinations=focus.destinations,
+                    relevance=focus.relevance,
+                    deal_strength=focus.deal_strength,
+                    has_explicit_price=focus.explicit_price,
+                    has_promotion=focus.promotion,
+                    core_route_change=focus.core_route_change,
+                    notify=focus.notify,
+                    reason=focus.reason,
+                    relevance_score=focus.score,
                 )
             )
         if not output:

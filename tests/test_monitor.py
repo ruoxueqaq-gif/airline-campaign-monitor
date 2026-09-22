@@ -12,7 +12,11 @@ def item(title: str, url: str, booking: str = "") -> Campaign:
         booking_period=booking,
         matched_origins=("上海",),
         matched_destinations=("东南亚",),
-        relevance="high",
+        relevance="HIGH",
+        deal_strength="GOOD",
+        has_promotion=True,
+        notify=True,
+        reason="核心出发地 PVG/SHA + 东南亚目的地 + 明确促销活动",
     )
 
 
@@ -56,6 +60,11 @@ def test_new_campaign_creates_new_report(tmp_path, monkeypatch):
     assert monitor.run(state_path, report_path) == 0
     assert "## NEW" in report_path.read_text(encoding="utf-8")
     assert "上海飞曼谷限时优惠" in report_path.read_text(encoding="utf-8")
+
+    # The persisted campaign ID/content prevents the next identical run from
+    # generating the same Issue payload again.
+    assert monitor.run(state_path, report_path) == 0
+    assert not report_path.exists()
 
 
 def test_booking_date_change_creates_updated_report(tmp_path, monkeypatch):
@@ -101,4 +110,31 @@ def test_one_adapter_failure_does_not_block_others(tmp_path, monkeypatch):
     assert monitor.run(state_path, report_path) == 0
     report = report_path.read_text(encoding="utf-8")
     assert "上海飞悉尼促销" in report
-    assert "Broken Air" in report
+    assert "Broken Air" not in report
+
+
+def test_low_relevance_change_is_recorded_without_issue_report(tmp_path, monkeypatch):
+    state_path = tmp_path / "campaigns.json"
+    report_path = tmp_path / "change.md"
+    monkeypatch.setattr(monitor, "ALL_ADAPTERS", (BaselineAdapter,))
+    monitor.run(state_path, report_path)
+
+    class WithLowNews(BaselineAdapter):
+        def fetch(self):
+            low = Campaign(
+                airline="AirAsia",
+                title="Don Mueang international expansion",
+                url="https://example.test/pr-news",
+                matched_destinations=("东南亚",),
+                relevance="LOW",
+                deal_strength="NORMAL",
+                notify=False,
+                reason="仅境外航线变化",
+            )
+            return super().fetch() + [low]
+
+    monkeypatch.setattr(monitor, "ALL_ADAPTERS", (WithLowNews,))
+    assert monitor.run(state_path, report_path) == 0
+    assert not report_path.exists()
+    state = json.loads(state_path.read_text(encoding="utf-8"))
+    assert any(record["title"] == "Don Mueang international expansion" for record in state["campaigns"].values())
