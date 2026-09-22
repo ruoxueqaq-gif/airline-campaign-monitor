@@ -357,6 +357,25 @@
       "travel_period": "",
       "url": "https://www.flyscoot.com/flights/en-sg/scoot-travel-deals?utm_source=website&utm_medium=homepage_promo_tile&utm_campaign=scoot_travel_deals"
     },
+    "77932624d7a2fcf2564b": {
+      "active": true,
+      "airline": "AirAsia",
+      "booking_period": "",
+      "content_hash": "1a46e5e4a83ab4ee31e3d02cb05f5511a07a366ae03d6ccb9befb10b460fd4a1",
+      "first_seen": "2026-09-22",
+      "id": "77932624d7a2fcf2564b",
+      "last_changed": "2026-09-22",
+      "matched_destinations": [
+        "东南亚"
+      ],
+      "matched_origins": [],
+      "missing_runs": 0,
+      "relevance": "medium",
+      "summary": "AirAsia Gears Up for High Season with Major International Expansion, Offering Direct Flights from Don Mueang to 46 Cities Across 53 Routes Thai AirAsia (Flight Code: FD) and Thai AirAsia X (Flight Code: XJ) are gearing up to resume temporarily suspended international routes and increase flight frequencies across multiple destinations. This strategic expansion aims to accommodate the surging travel demand during the year-end high season in the fourth quarter (October to December), offering direct flights to up to 46 cities across 53 routes covering ASEAN and the broader Asian region. Read More English , News , Thailand Preeyanij Gooltankjaroen September 22, 2026",
+      "title": "AirAsia Gears Up for High Season with Major International Expansion, Offering Direct Flights from Don Mueang to 46 Cities Across 53 Routes",
+      "travel_period": "demand during the year-end high season in the fourth quarter (October to December), offering direct",
+      "url": "https://newsroom.airasia.com/news/airasia-gears-up-for-high-season-with-major-international-expansion"
+    },
     "81778435d19c43961023": {
       "active": true,
       "airline": "ANA",
