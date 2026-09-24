@@ -642,36 +642,6 @@
       "travel_period": "",
       "url": "https://www.vietnamairlines.com/cn/zh/plan-book/LotuSociety/lotustudents-offers"
     },
-    "b3da1ed536cf730b7f6c": {
-      "active": true,
-      "airline": "ANA",
-      "booking_period": "单程特价",
-      "content_hash": "3e8117ef21ea894ca8e9ce4bccd0549ac1c91dcb28cf118deeb3e15b904b5c89",
-      "core_route_change": false,
-      "deal_strength": "GOOD",
-      "destination_match": [],
-      "first_seen": "2026-09-21",
-      "has_explicit_price": false,
-      "has_promotion": true,
-      "id": "b3da1ed536cf730b7f6c",
-      "last_changed": "2026-09-21",
-      "matched_destinations": [],
-      "matched_origins": [
-        "PVG"
-      ],
-      "missing_runs": 1,
-      "notify": true,
-      "origin_match": [
-        "PVG"
-      ],
-      "reason": "核心出发地 PVG + 无重点目的地区域 + 明确促销活动",
-      "relevance": "HIGH",
-      "relevance_score": 8,
-      "summary": "北京首都、上海浦东、广州出发 北美航线特价促销！ *购买期限为搭乘日14天前。 *部分日期除外。 *北京-西雅图、温哥华航线，上海浦东-休斯敦航线，广州-西雅图、温哥华航线仅销售单程特价。 查看详情 * 2023年全日空中国地区官网11.11促销活动的详细信息，将于2023年11月6日在本网站公布。敬请期待！",
-      "title": "北京首都、上海浦东、广州出发 北美航线特价促销！",
-      "travel_period": "日14天前",
-      "url": "https://www.ana.co.jp/zh/cn/plan-book/promotions/us-ca-special-fares-2026"
-    },
     "b81c071d4d5bd80a0273": {
       "active": true,
       "airline": "Vietnam Airlines",
