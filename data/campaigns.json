@@ -138,36 +138,6 @@
       "travel_period": "",
       "url": "https://www.singaporeair.com/en_UK/cn/ppsclub-krisflyer/krisflyer/krisflyer-milestone-rewards"
     },
-    "3a0b43bae17fa4bee283": {
-      "active": true,
-      "airline": "AirAsia",
-      "booking_period": "",
-      "content_hash": "596534c3eae9b97363c57f2c91da2e65c592d10a1b49b813f671dfa55d5246e8",
-      "core_route_change": false,
-      "deal_strength": "GREAT",
-      "destination_match": [
-        "东南亚"
-      ],
-      "first_seen": "2026-09-21",
-      "has_explicit_price": false,
-      "has_promotion": true,
-      "id": "3a0b43bae17fa4bee283",
-      "last_changed": "2026-09-21",
-      "matched_destinations": [
-        "东南亚"
-      ],
-      "matched_origins": [],
-      "missing_runs": 1,
-      "notify": false,
-      "origin_match": [],
-      "reason": "无中国大陆核心或次级出发地 + 东南亚目的地 + 明确促销活动",
-      "relevance": "LOW",
-      "relevance_score": 4,
-      "summary": "Celebrate the World’s Best with AirAsia - Enjoy up to 27% Off* All Seats, All Flights AirAsia is celebrating its 17th consecutive win as the World’s Best Low-Cost Airline - a milestone shaped by the millions of guests who continue to choose us for their journeys. To mark the occasion, enjoy up to 27% off* on all seats, all flights, and make your next adventure even more rewarding with AirAsia. Read More Airlines , English , Global , Malaysia , News Sammy YE September 19, 2026 Sepang",
-      "title": "Celebrate the World’s Best with AirAsia - Enjoy up to 27% Off* All Seats, All Flights",
-      "travel_period": "",
-      "url": "https://newsroom.airasia.com/news/celebrate-the-worlds-best-with-airasia-enjoy-up-to-27-off-all-seats-all-flights"
-    },
     "439f9d2cad027913c65f": {
       "active": true,
       "airline": "JAL",
