@@ -157,7 +157,7 @@
         "东南亚"
       ],
       "matched_origins": [],
-      "missing_runs": 0,
+      "missing_runs": 1,
       "notify": false,
       "origin_match": [],
       "reason": "无中国大陆核心或次级出发地 + 东南亚目的地 + 明确促销活动",
@@ -555,6 +555,36 @@
       "title": "AirAsia Gears Up for High Season with Major International Expansion, Offering Direct Flights from Don Mueang to 46 Cities Across 53 Routes",
       "travel_period": "demand during the year-end high season in the fourth quarter (October to December), offering direct",
       "url": "https://newsroom.airasia.com/news/airasia-gears-up-for-high-season-with-major-international-expansion"
+    },
+    "7d4ef453dd41c3288083": {
+      "active": true,
+      "airline": "AirAsia",
+      "booking_period": "into an exciting chance to win an unbelievable prize: 17 Winners • 17 Trips • 17 Months of free trav",
+      "content_hash": "e6ff7d74939507e112219419a1c3445761c4f643cfe760de283b699f8f95542d",
+      "core_route_change": false,
+      "deal_strength": "NORMAL",
+      "destination_match": [
+        "东南亚"
+      ],
+      "first_seen": "2026-09-25",
+      "has_explicit_price": false,
+      "has_promotion": false,
+      "id": "7d4ef453dd41c3288083",
+      "last_changed": "2026-09-25",
+      "matched_destinations": [
+        "东南亚"
+      ],
+      "matched_origins": [],
+      "missing_runs": 0,
+      "notify": false,
+      "origin_match": [],
+      "reason": "无中国大陆核心或次级出发地 + 东南亚目的地 + 无明确价格或促销",
+      "relevance": "LOW",
+      "relevance_score": 1,
+      "summary": "AirAsia Celebrates 17 Years as World's Best Low-Cost Airline with ‘Flight Lotto’ Campaign to Win 17 Months, 17 Trips of Free Travel for 17 winners AirAsia is celebrating an incredible milestone—winning the World’s Best Low-Cost Airline by Skytrax for the 17th consecutive year! To say a massive thank you to millions of guests for their loyalty, the airline is rolling out the ‘AirAsia Flight Lotto’ campaign, turning every flight booking into an exciting chance to win an unbelievable prize: 17 Winners • 17 Trips • 17 Months of free travel. Bookings are open now on AirAsia MOVE and all channels! Read More English , Thailand , News Preeyanij Gooltankjaroen September 25, 2026",
+      "title": "AirAsia Celebrates 17 Years as World's Best Low-Cost Airline with ‘Flight Lotto’ Campaign to Win 17 Months, 17 Trips of Free Travel for 17 winners",
+      "travel_period": "for 17 winners AirAsia is celebrating an incredible milestone—winning the World’s Best Low-Cost Airl",
+      "url": "https://newsroom.airasia.com/news/airasia-celebrates-17-years-as-worlds-best-low-cost-airline-with-flight-lotto-campaign-to-win-17-months-17-trips-of-free-travel-for-17-winners"
     },
     "81778435d19c43961023": {
       "active": true,
