@@ -220,36 +220,6 @@
       "travel_period": "",
       "url": "https://www.singaporeair.com/en_UK/cn/ppsclub-krisflyer/use-miles/krisplus"
     },
-    "5a44fa9e0d59832cda77": {
-      "active": true,
-      "airline": "AirAsia",
-      "booking_period": "",
-      "content_hash": "b79cdbbc86478265e915e3698dc59bf1d9b77c43df020d61ce865273e93a9a49",
-      "core_route_change": false,
-      "deal_strength": "GREAT",
-      "destination_match": [
-        "东南亚"
-      ],
-      "first_seen": "2026-09-21",
-      "has_explicit_price": false,
-      "has_promotion": true,
-      "id": "5a44fa9e0d59832cda77",
-      "last_changed": "2026-09-21",
-      "matched_destinations": [
-        "东南亚"
-      ],
-      "matched_origins": [],
-      "missing_runs": 1,
-      "notify": false,
-      "origin_match": [],
-      "reason": "无中国大陆核心或次级出发地 + 东南亚目的地 + 明确促销活动",
-      "relevance": "LOW",
-      "relevance_score": 4,
-      "summary": "与亚航一同庆祝‘世界最佳’殊荣 - 所有航班，所有机位享有高达27%折扣* 亚航连续17年荣获‘世界最佳低成本航空公司’殊荣，这份肯定源自全球数百万旅客持续的信赖与选择。为庆祝这一重要里程碑，亚航推出高达27%*的优惠，所有座位、所有航班均可享折扣，邀您一同开启下一段精彩旅程。 Read More Airlines , News , Malaysia , 简体中文 Sammy YE September 19, 2026 Sepang",
-      "title": "与亚航一同庆祝‘世界最佳’殊荣 - 所有航班，所有机位享有高达27%折扣*",
-      "travel_period": "",
-      "url": "https://newsroom.airasia.com/news/celebrate-the-worlds-best-with-airasia-enjoy-up-to-27-off-all-seats-all-flights-sc"
-    },
     "5fdff8d5d79f034168e6": {
       "active": true,
       "airline": "Vietnam Airlines",
