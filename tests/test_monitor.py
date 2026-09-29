@@ -32,7 +32,7 @@ class BaselineAdapter:
 
 def test_first_run_builds_baseline_without_report(tmp_path, monkeypatch):
     state_path = tmp_path / "data" / "campaigns.json"
-    csv_path = tmp_path / "csv" / "my_campaigns.csv"
+    csv_path = tmp_path / "csv" / "02_正常" / "my_campaigns.csv"
     report_path = tmp_path / "change.md"
     monkeypatch.setattr(monitor, "ALL_ADAPTERS", (BaselineAdapter,))
 

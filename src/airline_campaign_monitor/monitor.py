@@ -17,8 +17,8 @@ def run(
     csv_path: Path | None = None,
     best_deals_path: Path | None = None,
 ) -> int:
-    csv_path = csv_path or state_path.parent.parent / "csv" / "my_campaigns.csv"
-    best_deals_path = best_deals_path or state_path.parent.parent / "csv" / "my_best_deals.csv"
+    csv_path = csv_path or state_path.parent.parent / "csv" / "02_正常" / "my_campaigns.csv"
+    best_deals_path = best_deals_path or state_path.parent.parent / "csv" / "01_重点关注" / "my_best_deals.csv"
     old_state, is_baseline = load_state(state_path)
     client = HttpClient()
     campaigns = []
@@ -72,8 +72,8 @@ def run(
 def main() -> int:
     parser = argparse.ArgumentParser(description="Monitor official airline campaigns")
     parser.add_argument("--state", type=Path, default=Path("data/campaigns.json"))
-    parser.add_argument("--csv", type=Path, default=Path("csv/my_campaigns.csv"))
-    parser.add_argument("--best-deals", type=Path, default=Path("csv/my_best_deals.csv"))
+    parser.add_argument("--csv", type=Path, default=Path("csv/02_正常/my_campaigns.csv"))
+    parser.add_argument("--best-deals", type=Path, default=Path("csv/01_重点关注/my_best_deals.csv"))
     parser.add_argument("--report", type=Path, default=Path("runtime/change.md"))
     args = parser.parse_args()
     return run(args.state, args.report, args.csv, args.best_deals)
