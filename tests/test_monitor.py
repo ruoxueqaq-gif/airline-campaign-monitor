@@ -31,7 +31,7 @@ class BaselineAdapter:
 
 
 def test_first_run_builds_baseline_without_report(tmp_path, monkeypatch):
-    state_path = tmp_path / "campaigns.json"
+    state_path = tmp_path / "data" / "campaigns.json"
     csv_path = tmp_path / "csv" / "my_campaigns.csv"
     report_path = tmp_path / "change.md"
     monkeypatch.setattr(monitor, "ALL_ADAPTERS", (BaselineAdapter,))
@@ -47,7 +47,7 @@ def test_first_run_builds_baseline_without_report(tmp_path, monkeypatch):
 
 
 def test_new_campaign_creates_new_report(tmp_path, monkeypatch):
-    state_path = tmp_path / "campaigns.json"
+    state_path = tmp_path / "data" / "campaigns.json"
     report_path = tmp_path / "change.md"
     monkeypatch.setattr(monitor, "ALL_ADAPTERS", (BaselineAdapter,))
     monitor.run(state_path, report_path)
@@ -68,7 +68,7 @@ def test_new_campaign_creates_new_report(tmp_path, monkeypatch):
 
 
 def test_booking_date_change_creates_updated_report(tmp_path, monkeypatch):
-    state_path = tmp_path / "campaigns.json"
+    state_path = tmp_path / "data" / "campaigns.json"
     report_path = tmp_path / "change.md"
 
     class First(BaselineAdapter):
@@ -88,7 +88,7 @@ def test_booking_date_change_creates_updated_report(tmp_path, monkeypatch):
 
 
 def test_one_adapter_failure_does_not_block_others(tmp_path, monkeypatch):
-    state_path = tmp_path / "campaigns.json"
+    state_path = tmp_path / "data" / "campaigns.json"
     report_path = tmp_path / "change.md"
     monkeypatch.setattr(monitor, "ALL_ADAPTERS", (BaselineAdapter,))
     monitor.run(state_path, report_path)
@@ -114,7 +114,7 @@ def test_one_adapter_failure_does_not_block_others(tmp_path, monkeypatch):
 
 
 def test_low_relevance_change_is_recorded_without_issue_report(tmp_path, monkeypatch):
-    state_path = tmp_path / "campaigns.json"
+    state_path = tmp_path / "data" / "campaigns.json"
     report_path = tmp_path / "change.md"
     monkeypatch.setattr(monitor, "ALL_ADAPTERS", (BaselineAdapter,))
     monitor.run(state_path, report_path)
