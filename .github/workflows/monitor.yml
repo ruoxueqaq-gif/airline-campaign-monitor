@@ -52,9 +52,9 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           TZ: Asia/Shanghai
         run: |
-          gh label create alert --description "Automated monitoring alert" --color D73A4A --force
+          gh label create alert --description "航司促销监控提醒" --color D73A4A --force
           gh issue create \
-            --title "[ALERT] 航司促销活动更新 - $(date +%F)" \
+            --title "[提醒] 航司促销活动更新 - $(date +%F)" \
             --body-file runtime/change.md \
             --assignee ruoxueqaq-gif \
             --label alert
