@@ -43,7 +43,7 @@ def test_first_run_builds_baseline_without_report(tmp_path, monkeypatch):
     assert len(json.loads(state_path.read_text(encoding="utf-8"))["campaigns"]) == 1
     csv_text = csv_path.read_text(encoding="utf-8-sig")
     assert "航空公司,促销标题,状态" in csv_text
-    assert "Test Air,上海飞新加坡促销,ACTIVE" in csv_text
+    assert "Test Air,上海飞新加坡促销,进行中" in csv_text
 
 
 def test_new_campaign_creates_new_report(tmp_path, monkeypatch):
@@ -58,7 +58,7 @@ def test_new_campaign_creates_new_report(tmp_path, monkeypatch):
 
     monkeypatch.setattr(monitor, "ALL_ADAPTERS", (WithNew,))
     assert monitor.run(state_path, report_path) == 0
-    assert "## NEW" in report_path.read_text(encoding="utf-8")
+    assert "## 新增" in report_path.read_text(encoding="utf-8")
     assert "上海飞曼谷限时优惠" in report_path.read_text(encoding="utf-8")
 
     # The persisted campaign ID/content prevents the next identical run from
@@ -83,7 +83,7 @@ def test_booking_date_change_creates_updated_report(tmp_path, monkeypatch):
     monitor.run(state_path, report_path)
     monkeypatch.setattr(monitor, "ALL_ADAPTERS", (Changed,))
     monitor.run(state_path, report_path)
-    assert "## UPDATED" in report_path.read_text(encoding="utf-8")
+    assert "## 更新" in report_path.read_text(encoding="utf-8")
     assert "延长至 9 月 20 日" in report_path.read_text(encoding="utf-8")
 
 

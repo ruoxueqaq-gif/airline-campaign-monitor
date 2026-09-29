@@ -15,11 +15,11 @@ def test_airasia_foreign_capacity_pr_is_low_and_silent():
     assert result.notify is False
 
 
-def test_core_origin_explicit_price_is_high_and_notified():
+def test_core_origin_oceania_price_is_medium_and_notified():
     result = analyze("上海浦东出发飞悉尼特价，机票 ¥699 起", "AirAsia")
     assert result.origins == ("PVG",)
     assert "澳大利亚" in result.destinations
-    assert result.relevance == "HIGH"
+    assert result.relevance == "MEDIUM"
     assert result.deal_strength == "GOOD"
     assert result.explicit_price is True
     assert result.notify is True
