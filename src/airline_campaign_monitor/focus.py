@@ -19,15 +19,21 @@ SECONDARY_ORIGINS = {
 SHANGHAI_TERMS = ("上海", "shanghai")
 
 DESTINATIONS = {
-    "日本": ("日本", "japan", "东京", "大阪", "札幌", "福冈", "冲绳", "tokyo", "osaka", "sapporo", "fukuoka"),
+    "日本": ("日本", "japan", "东京", "大阪", "札幌", "福冈", "冲绳", "tokyo", "osaka", "sapporo", "fukuoka", "okinawa"),
+    "泰国": ("泰国", "thailand", "曼谷", "bangkok", "清迈", "chiang mai", "普吉", "phuket", "甲米", "krabi"),
+    "越南": ("越南", "vietnam", "河内", "hanoi", "胡志明", "ho chi minh", "岘港", "da nang", "芽庄", "nha trang"),
     "东南亚": (
-        "东南亚", "southeast asia", "新加坡", "越南", "泰国", "马来西亚", "印度尼西亚", "印尼", "菲律宾",
-        "柬埔寨", "曼谷", "吉隆坡", "巴厘岛", "singapore", "vietnam", "thailand", "malaysia", "indonesia",
-        "philippines", "bangkok", "kuala lumpur", "bali",
+        "东南亚", "southeast asia", "asean", "新加坡", "马来西亚", "印度尼西亚", "印尼", "菲律宾",
+        "柬埔寨", "老挝", "缅甸", "文莱", "singapore", "malaysia", "indonesia", "philippines",
+        "cambodia", "laos", "myanmar", "brunei", "吉隆坡", "kuala lumpur", "巴厘岛", "bali",
     ),
     "澳大利亚": ("澳大利亚", "澳洲", "australia", "悉尼", "墨尔本", "珀斯", "sydney", "melbourne", "perth"),
     "新西兰": ("新西兰", "new zealand", "奥克兰", "auckland"),
-    "欧洲": ("欧洲", "europe", "伦敦", "巴黎", "法兰克福", "罗马", "米兰", "london", "paris", "frankfurt", "rome", "milan"),
+    "欧洲": ("欧洲", "europe", "巴黎", "法兰克福", "罗马", "米兰", "paris", "frankfurt", "rome", "milan"),
+    "英国": ("英国", "united kingdom", "britain", "伦敦", "london", "曼彻斯特", "manchester"),
+    "北美": ("北美", "north america", "美国", "united states", "加拿大", "canada", "纽约", "new york", "洛杉矶", "los angeles"),
+    "南美": ("南美", "south america", "巴西", "brazil", "阿根廷", "argentina"),
+    "非洲": ("非洲", "africa", "南非", "south africa", "埃及", "egypt"),
 }
 
 # Broad terms are retained for adapter discovery. Notification decisions use
@@ -61,6 +67,18 @@ class FocusAssessment:
     notify: bool
     reason: str
     score: int
+
+
+def destination_priority(destinations: tuple[str, ...] | list[str]) -> int:
+    """0: Japan/SE Asia; 1: Oceania/Europe/UK; 2: unspecified; 3: Americas/Africa."""
+    names = set(destinations)
+    if names & {"日本", "泰国", "越南", "东南亚"}:
+        return 0
+    if names & {"澳大利亚", "新西兰", "欧洲", "英国"}:
+        return 1
+    if names & {"北美", "南美", "非洲"}:
+        return 3
+    return 2
 
 
 def _matches(text: str, groups: dict[str, tuple[str, ...]]) -> tuple[str, ...]:
@@ -115,6 +133,9 @@ def analyze(text: str, airline: str) -> FocusAssessment:
     lowered = normalized.lower()
     origins = _origin_matches(lowered)
     destinations = _matches(lowered, DESTINATIONS)
+    # Country-specific Southeast Asia matches also carry the regional label.
+    if ("泰国" in destinations or "越南" in destinations) and "东南亚" not in destinations:
+        destinations += ("东南亚",)
     core = tuple(code for code in origins if code in CORE_ORIGINS)
     secondary = tuple(code for code in origins if code in SECONDARY_ORIGINS)
     explicit_price = _has_explicit_price(lowered)
@@ -133,7 +154,10 @@ def analyze(text: str, airline: str) -> FocusAssessment:
     score += 4 if explicit_price else 0
     score += 3 if promotion else 0
     score += 3 if core_route_change and new_route else 2 if core_route_change and frequency else 0
-    score += sum({"澳大利亚": 3, "新西兰": 3, "日本": 2, "欧洲": 2, "东南亚": 1}.get(item, 0) for item in destinations)
+    score += max(({"日本": 6, "泰国": 6, "越南": 6, "东南亚": 4,
+                   "澳大利亚": 2, "新西兰": 2, "欧洲": 2, "英国": 2}.get(item, 0)
+                  for item in destinations), default=0)
+    destination_tier = destination_priority(destinations)
 
     route_news = new_route or frequency or capacity_pr
     foreign_only_route = route_news and not origins
@@ -145,9 +169,9 @@ def analyze(text: str, airline: str) -> FocusAssessment:
         score -= 2
 
     meaningful_signal = explicit_price or promotion or core_route_change
-    if (core or core_route_change) and meaningful_signal and score >= 8:
+    if (core or core_route_change) and meaningful_signal and destination_tier == 0 and score >= 8:
         relevance = "HIGH"
-    elif (core or secondary or core_route_change) and meaningful_signal:
+    elif (core or secondary or core_route_change) and meaningful_signal and destination_tier <= 2:
         relevance = "MEDIUM"
     else:
         # Destination keywords alone never raise relevance.
@@ -162,7 +186,7 @@ def analyze(text: str, airline: str) -> FocusAssessment:
         "涉及核心机场 " + "/".join(mentioned_core) if core_route_change else
         "次级出发地 " + "/".join(secondary) if secondary else "无中国大陆核心或次级出发地"
     )
-    destination_text = " + ".join(destinations) + "目的地" if destinations else "无重点目的地区域"
+    destination_text = " + ".join(destinations) + "目的地" if destinations else "未识别目的地区域"
     signal_parts = []
     if explicit_price:
         signal_parts.append("明确促销价格")
