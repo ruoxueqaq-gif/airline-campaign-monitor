@@ -73,3 +73,12 @@ def shown(record: dict, field: str) -> str:
     if value is not None:
         return str(value)
     return display_text(str(record.get(field) or ""), field)[0]
+
+AIRLINE_NAMES = {
+    "ANA": "全日空", "JAL": "日本航空", "Vietnam Airlines": "越南航空",
+    "AirAsia": "亚洲航空", "Scoot": "酷航", "Singapore Airlines": "新加坡航空",
+    "Air China": "中国国际航空",
+}
+RELEVANCE_NAMES = {"HIGH": "高", "MEDIUM": "中", "LOW": "低"}
+DEAL_NAMES = {"GREAT": "很划算", "GOOD": "较好", "NORMAL": "普通"}
+STATUS_NAMES = {"NEW": "新增", "UPDATED": "更新", "EXPIRED": "结束"}
