@@ -45,6 +45,6 @@ def test_chinese_display_does_not_trigger_source_update():
 def test_translation_failure_keeps_display_in_chinese():
     import requests
     with patch("airline_campaign_monitor.display.requests.get", side_effect=requests.Timeout()):
-        shown, pending = display_text("Thailand flight sale", "title")
+        shown, pending = display_text("Japanese fare sale", "title")
     assert shown == "促销活动（中文翻译暂不可用）"
     assert pending
