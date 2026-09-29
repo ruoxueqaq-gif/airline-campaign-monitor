@@ -7,6 +7,8 @@ import re
 from urllib.parse import urlparse
 
 from .deals import assess_deal, record_is_expired
+from .display import AIRLINE_NAMES, DEAL_NAMES, RELEVANCE_NAMES, shown
+from .focus import destination_priority
 
 
 CSV_COLUMNS = (
@@ -64,26 +66,28 @@ def render_csv(state: dict, *, best_only: bool = False) -> bytes:
             if existing is None or (has_chinese and not existing_has_chinese):
                 deduplicated[key] = (item, assessment)
         records = list(deduplicated.values())
-    records.sort(key=lambda pair: (-pair[1].score, pair[0].get("airline", ""), pair[0].get("title", "")))
+    records.sort(key=lambda pair: (destination_priority(pair[0].get("destination_match") or pair[0].get("matched_destinations") or []),
+                                   -int(pair[0].get("relevance_score") or 0), -pair[1].score,
+                                   pair[0].get("airline", ""), pair[0].get("title", "")))
     for record, assessment in records:
         row = {
-                "airline": record.get("airline", ""),
-                "title": record.get("title", ""),
-                "status": "ACTIVE" if record.get("active", True) else "EXPIRED",
-                "deal_strength": record.get("deal_strength") or assessment.strength,
+                "airline": AIRLINE_NAMES.get(record.get("airline", ""), record.get("airline", "")),
+                "title": shown(record, "title"),
+                "status": "进行中" if record.get("active", True) else "已结束",
+                "deal_strength": DEAL_NAMES.get(record.get("deal_strength") or assessment.strength, "普通"),
                 "deal_highlights": "；".join(assessment.highlights),
-                "relevance": record.get("relevance", "LOW"),
+                "relevance": RELEVANCE_NAMES.get(record.get("relevance", "LOW"), "低"),
                 "origins": "、".join(record.get("origin_match") or record.get("matched_origins", [])),
                 "destinations": "、".join(record.get("destination_match") or record.get("matched_destinations", [])),
                 "has_explicit_price": "是" if record.get("has_explicit_price") else "否",
                 "notify": "是" if record.get("notify") else "否",
                 "reason": record.get("reason", ""),
-                "booking_period": record.get("booking_period", ""),
-                "travel_period": record.get("travel_period", ""),
+                "booking_period": shown(record, "booking_period"),
+                "travel_period": shown(record, "travel_period"),
                 "first_seen": record.get("first_seen", ""),
                 "last_changed": record.get("last_changed", ""),
                 "url": record.get("url", ""),
-                "summary": record.get("summary", ""),
+                "summary": shown(record, "summary"),
             }
         writer.writerow({CSV_HEADERS[key]: value for key, value in row.items()})
     return buffer.getvalue().encode("utf-8-sig")
