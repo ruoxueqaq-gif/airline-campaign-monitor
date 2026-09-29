@@ -1,7 +1,10 @@
+from datetime import date, timedelta
+
 from airline_campaign_monitor.csv_export import render_csv, save_csv_if_changed
 
 
 def test_csv_is_excel_friendly_and_stable(tmp_path):
+    booking_end = (date.today() + timedelta(days=7)).isoformat()
     state = {
         "schema_version": 1,
         "campaigns": {
@@ -12,7 +15,7 @@ def test_csv_is_excel_friendly_and_stable(tmp_path):
                 "relevance": "high",
                 "matched_origins": ["上海"],
                 "matched_destinations": ["日本"],
-                "booking_period": "2026-09-01 至 2026-09-30",
+                "booking_period": f"2026-09-01 至 {booking_end}",
                 "travel_period": "2026-10-01 至 2026-12-20",
                 "first_seen": "2026-09-21",
                 "last_changed": "2026-09-21",
@@ -31,6 +34,7 @@ def test_csv_is_excel_friendly_and_stable(tmp_path):
 
 
 def test_csv_omits_expired_and_best_deals_keeps_only_strong_offers():
+    booking_end = (date.today() + timedelta(days=7)).isoformat()
     state = {
         "schema_version": 1,
         "campaigns": {
@@ -40,7 +44,7 @@ def test_csv_omits_expired_and_best_deals_keeps_only_strong_offers():
             },
             "strong": {
                 "airline": "AirAsia", "title": "所有航班最高27%折扣", "active": True,
-                "booking_period": "2026-09-01 至 2026-09-27", "url": "https://www.airasia.com/deal",
+                "booking_period": f"2026-09-01 至 {booking_end}", "url": "https://www.airasia.com/deal",
             },
             "normal": {
                 "airline": "JAL", "title": "普通会员活动", "active": True,
