@@ -7,6 +7,7 @@ from pathlib import Path
 
 from .models import Campaign, Change
 from .deals import record_is_expired
+from .display import localize_record
 
 SCHEMA_VERSION = 1
 EXPIRE_AFTER_MISSES = 2
@@ -57,12 +58,12 @@ def reconcile(
         seen_ids.add(campaign_id)
         old = records.get(campaign_id)
         if old is None:
-            new_record = campaign.to_record(today)
+            new_record = localize_record(campaign.to_record(today))
             records[campaign_id] = new_record
             changes.append(Change("NEW", new_record))
             continue
 
-        candidate = campaign.to_record(old.get("first_seen", today))
+        candidate = localize_record(campaign.to_record(old.get("first_seen", today)), old)
         candidate["first_seen"] = old.get("first_seen", today)
         candidate["last_changed"] = old.get("last_changed", today)
         if _source_changed(old, candidate) or not old.get("active", True):
