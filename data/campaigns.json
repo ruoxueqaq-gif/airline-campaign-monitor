@@ -31,6 +31,41 @@
       "travel_period_zh": "",
       "url": "https://act.airchina.com.cn/?activityCode=223376278656&channelCode=3&channelTag=null"
     },
+    "0b99c61cab8c34967717": {
+      "active": true,
+      "airline": "AirAsia",
+      "booking_period": "To commemorate the long-awaited return of its Ahmedabad and Amritsar routes, AirAsia will be offerin",
+      "booking_period_zh": "为纪念期待已久的艾哈迈达巴德和阿姆利则航线回归，亚航将提供",
+      "content_hash": "3a572936e5763f900ed9120a8ca1b6d819c772e158dd957e5c3bc7992299c716",
+      "core_route_change": false,
+      "deal_strength": "GOOD",
+      "destination_match": [
+        "东南亚"
+      ],
+      "first_seen": "2026-10-05",
+      "has_explicit_price": false,
+      "has_promotion": true,
+      "id": "0b99c61cab8c34967717",
+      "last_changed": "2026-10-05",
+      "matched_destinations": [
+        "东南亚"
+      ],
+      "matched_origins": [],
+      "missing_runs": 0,
+      "notify": false,
+      "origin_match": [],
+      "reason": "无中国大陆核心或次级出发地 + 东南亚目的地 + 明确促销活动",
+      "relevance": "LOW",
+      "relevance_score": 7,
+      "summary": "AirAsia celebrates return of Ahmedabad and Amritsar flights with a special sale To commemorate the long-awaited return of its Ahmedabad and Amritsar routes, AirAsia will be offering its guests special fares to these two vibrant Indian cities with limited time all-in one-way fares from just RM669* Read More Airlines , English , Global , Malaysia , News Vichitra October 5, 2026",
+      "summary_zh": "亚航以特别促销庆祝艾哈迈达巴德和阿姆利则航班回归 为了纪念期待已久的艾哈迈达巴德和阿姆利则航线回归，亚航将为乘客提供前往这两个充满活力的印度城市的特价机票，限时全程单程票价仅售 RM669* 阅读更多 航空公司, 英语 , 全球 , 马来西亚 , 新闻 Vichitra 2026 年 10 月 5 日",
+      "title": "AirAsia celebrates return of Ahmedabad and Amritsar flights with a special sale",
+      "title_zh": "亚航以特别促销庆祝艾哈迈达巴德和阿姆利则航班回归",
+      "translation_pending": false,
+      "travel_period": "",
+      "travel_period_zh": "",
+      "url": "https://newsroom.airasia.com/news/airasia-celebrates-return-of-ahmedabad-and-amritsar-flights-with-a-special-sale"
+    },
     "1e71901c90a5a6d216b6": {
       "active": true,
       "airline": "Vietnam Airlines",
@@ -591,6 +626,41 @@
       "travel_period": "航线：北京、上海、广州、深圳、大连、青岛、杭州航线 780元 起 2,900元 起 详细信息 * 2023年全日空中国地区官网11.11促销活动的详细信息，将于2023年11月6日在本网站公布",
       "travel_period_zh": "航线：北京、上海、广州、深圳、大连、青岛、杭州航线 780元 起 2,900元 起 详细信息 * 2023年全日空中国地区官网11.11促销活动的详细信息，将于2023年11月6日在本网站公布",
       "url": "https://www.ana.co.jp/zh/cn/plan-book/promotions/japan-domestic-flight-transfer"
+    },
+    "841f5dda7970a672333e": {
+      "active": true,
+      "airline": "AirAsia",
+      "booking_period": "",
+      "booking_period_zh": "",
+      "content_hash": "503ac5ee04196ba2f23b221bf3baa6b8b231c53f5f10658b26f475290ccb5c09",
+      "core_route_change": false,
+      "deal_strength": "NORMAL",
+      "destination_match": [
+        "东南亚"
+      ],
+      "first_seen": "2026-10-05",
+      "has_explicit_price": false,
+      "has_promotion": false,
+      "id": "841f5dda7970a672333e",
+      "last_changed": "2026-10-05",
+      "matched_destinations": [
+        "东南亚"
+      ],
+      "matched_origins": [],
+      "missing_runs": 0,
+      "notify": false,
+      "origin_match": [],
+      "reason": "无中国大陆核心或次级出发地 + 东南亚目的地 + 无明确价格或促销",
+      "relevance": "LOW",
+      "relevance_score": 4,
+      "summary": "AirAsia tawar tambang promosi istimewa sempena kembalinya penerbangan ke Ahmedabad dan Amritsar Sempena kembalinya laluan Ahmedabad dan Amritsar yang dinanti-nantikan, AirAsia menawarkan tambang istimewa bagi penerbangan ke dua destinasi ikonik di India ini, dengan tambang termasuk semua sehala bermula daripada RM669* untuk tempoh terhad. Read More Bahasa Malaysia , Malaysia , News , Airlines Ahmad Hafiy Ahmad Fezul - October 5, 2026 Sepang",
+      "summary_zh": "亚航配合飞往艾哈迈达巴德和阿姆利则的航班推出特别促销机票 随着期待已久的艾哈迈达巴德和阿姆利则航线的回归，亚航为飞往印度这两个标志性目的地的航班提供特价机票，限时全包票价从 RM669* 起。阅读更多 马来西亚语、马来西亚、新闻、航空公司 Ahmad Hafiy Ahmad Fezul - 2026 年 10 月 5 日雪邦",
+      "title": "AirAsia tawar tambang promosi istimewa sempena kembalinya penerbangan ke Ahmedabad dan Amritsar",
+      "title_zh": "亚航将配合飞往艾哈迈达巴德和阿姆利则的航班推出特别促销活动",
+      "translation_pending": false,
+      "travel_period": "",
+      "travel_period_zh": "",
+      "url": "https://newsroom.airasia.com/news/airasia-tawar-tambang-promosi-istimewa-sempena-kembalinya-penerbangan-ke-ahmedabad-dan-amritsar"
     },
     "923eec5e3b01eb94e1fa": {
       "active": true,
