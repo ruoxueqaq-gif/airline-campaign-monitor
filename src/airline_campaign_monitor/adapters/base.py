@@ -13,10 +13,12 @@ from ..models import Campaign, compact_text
 DATE_RANGE_PATTERNS = (
     re.compile(r"(?:销售|购票|预订|预定|出票)(?:日期|期间|时间|期限)?[：:]?\s*([^。；\n]{4,100})", re.I),
     re.compile(r"(?:book(?:ing)?|sale)\s+(?:period|dates?)?[：:]?\s*([^.;\n]{4,100})", re.I),
+    re.compile(r"(?:販売|予約|購入)(?:期間|受付期間|期限)?[：:]\s*([^。\n]{4,160})", re.I),
 )
 TRAVEL_RANGE_PATTERNS = (
     re.compile(r"(?:旅行|出行|搭乘|适用|飞行)(?:日期|期间|时间|期限)?[：:]?\s*([^。；\n]{4,100})", re.I),
     re.compile(r"travel\s+(?:period|dates?)?[：:]?\s*([^.;\n]{4,100})", re.I),
+    re.compile(r"(?:対象搭乗|搭乗|旅行|出発)(?:期間|日|日期)?[：:]\s*([^。\n]{4,160})", re.I),
 )
 
 
@@ -59,13 +61,20 @@ class BaseAdapter(ABC):
         for selector in self.card_selectors:
             nodes.extend(node for node in soup.select(selector) if isinstance(node, Tag))
         nodes.extend(node for node in soup.select("h1, h2, h3, h4") if isinstance(node, Tag))
+        # Promotional hero banners often contain only an image with alt text.
+        nodes.extend(
+            anchor for anchor in soup.select("a[href]")
+            if anchor.find("img", alt=True) or anchor.get("aria-label") or anchor.get("title")
+        )
 
         output: dict[str, Campaign] = {}
         for node in nodes:
             campaign = self._campaign_from_node(node, source_url)
             if campaign:
                 existing = output.get(campaign.campaign_id)
-                if existing is None or self._quality(campaign) > self._quality(existing):
+                if (existing is None or
+                    (campaign.notify and not existing.notify) or
+                    (campaign.notify == existing.notify and self._quality(campaign) > self._quality(existing))):
                     output[campaign.campaign_id] = campaign
         return list(output.values())
 
@@ -82,7 +91,16 @@ class BaseAdapter(ABC):
             return None
 
         title = compact_text(title_node.get_text(" ", strip=True) if title_node else link.get_text(" ", strip=True))
+        image = link.find("img", alt=True)
+        image_title = compact_text(str(image.get("alt") or "")) if isinstance(image, Tag) else ""
+        fallback_title = compact_text(str(link.get("aria-label") or link.get("title") or ""))
+        if (not self._looks_promotional(title)) and self._looks_promotional(image_title):
+            title = image_title
+        elif len(title) < 5:
+            title = image_title or fallback_title or title
         body = compact_text(node.get_text(" ", strip=True))
+        if image_title and image_title not in body:
+            body = compact_text(f"{image_title} {body}")
         if len(title) < 5 or len(title) > 240 or not self._looks_promotional(f"{title} {body}"):
             return None
 
@@ -90,7 +108,11 @@ class BaseAdapter(ABC):
         if not url or not self._allowed(url):
             return None
         summary = body[:800]
-        focus = analyze(f"{title} {summary}", self.airline)
+        china_market = (
+            (self.airline == "ANA" and "/zh/cn/" in source_url.lower())
+            or (self.airline == "JAL" and "/zh-cn/" in source_url.lower())
+        )
+        focus = analyze(f"{title} {summary}", self.airline, headline=title, china_market=china_market)
         return Campaign(
             airline=self.airline,
             title=title,
@@ -131,7 +153,14 @@ class BaseAdapter(ABC):
         for pattern in patterns:
             match = pattern.search(text)
             if match:
-                return compact_text(match.group(1))[:160]
+                period = compact_text(match.group(1))
+                # Japanese listing cards frequently concatenate booking and travel labels.
+                period = re.split(
+                    r"(?:対象搭乗期間|搭乗期間|旅行期間|販売期間|予約期間|購買期間|"
+                    r"旅行日期|出行日期|购票日期|销售期间|travel period)\s*[：:]",
+                    period, maxsplit=1, flags=re.I,
+                )[0]
+                return period[:160]
         return ""
 
     @staticmethod

@@ -39,13 +39,13 @@ DESTINATIONS = {
 # Broad terms are retained for adapter discovery. Notification decisions use
 # the stricter promotion and route signals below.
 PROMO_TERMS = (
-    "促销", "优惠", "特惠", "折扣", "限时", "特价", "低至", "减免", "sale", "deal",
+    "促销", "优惠", "特惠", "折扣", "限时", "特价", "低至", "减免", "大促", "双十一", "双11", "11.11", "sale", "deal",
     "offer", "promotion", "promo", "discount", "special fare", "early bird", "campaign",
     "fare", "reward", "redeem", "キャンペーン", "おトク", "割引", "特別", "セール",
 )
 
 PROMOTION_SIGNALS = (
-    "促销", "优惠活动", "特惠", "折扣码", "优惠码", "特价", "限时优惠", "限时促销", "闪购", "低至",
+    "促销", "优惠活动", "特惠", "折扣码", "优惠码", "特价", "限时优惠", "限时促销", "闪购", "低至", "大促", "双十一", "双11", "11.11",
     "sale", "promotion", "promo code", "discount code", "special fare", "flash sale", "fare sale", "early bird",
     "セール", "割引コード",
 )
@@ -128,9 +128,23 @@ def _has_explicit_price(text: str) -> bool:
     return bool(re.search(rf"(?:{currency_before}|{currency_after})", text, re.I))
 
 
-def analyze(text: str, airline: str) -> FocusAssessment:
+def analyze(text: str, airline: str, *, headline: str | None = None, china_market: bool = False) -> FocusAssessment:
     normalized = compact_text(text)
     lowered = normalized.lower()
+    headline_text = compact_text(headline if headline is not None else text).lower()
+    # Only a sale headline (not an old footnote buried in the page) can
+    # trigger the annual-sale override.
+    annual_sale = bool(re.search(
+        r"双\s*十\s*一|双\s*11|11[.·/-]?11|black\s*friday|ブラックフライデー",
+        headline_text, re.I,
+    ))
+    mainland_context = bool(re.search(
+        r"中国大陆|中国大陸|中国地区|中国出发|中国発|大陆始发|"
+        r"杭州|上海|宁波|南京|北京|青岛|广州|深圳|大连|"
+        r"hangzhou|shanghai|ningbo|nanjing|beijing|guangzhou|shenzhen",
+        lowered, re.I,
+    ))
+    annual_china_sale = airline in {"ANA", "JAL"} and annual_sale and (china_market or mainland_context)
     origins = _origin_matches(lowered)
     destinations = _matches(lowered, DESTINATIONS)
     # Country-specific Southeast Asia matches also carry the regional label.
@@ -151,6 +165,8 @@ def analyze(text: str, airline: str) -> FocusAssessment:
     core_route_change = bool((core or mentioned_core) and (new_route or frequency))
 
     score = 5 if (core or core_route_change) else 2 if secondary else 0
+    if annual_china_sale:
+        score += 10
     score += 4 if explicit_price else 0
     score += 3 if promotion else 0
     score += 3 if core_route_change and new_route else 2 if core_route_change and frequency else 0
@@ -169,7 +185,9 @@ def analyze(text: str, airline: str) -> FocusAssessment:
         score -= 2
 
     meaningful_signal = explicit_price or promotion or core_route_change
-    if (core or core_route_change) and meaningful_signal and destination_tier == 0 and score >= 8:
+    if annual_china_sale:
+        relevance = "HIGH"
+    elif (core or core_route_change) and meaningful_signal and destination_tier == 0 and score >= 8:
         relevance = "HIGH"
     elif (core or secondary or core_route_change) and meaningful_signal and destination_tier <= 2:
         relevance = "MEDIUM"
@@ -198,6 +216,8 @@ def analyze(text: str, airline: str) -> FocusAssessment:
         signal_parts.append("仅境外航线变化")
     if capacity_pr:
         signal_parts.append("仅旺季扩张/运力 PR")
+    if annual_china_sale:
+        signal_parts.append("双十一/黑五中国市场专项监测")
     if not signal_parts:
         signal_parts.append("无明确价格或促销")
     reason = " + ".join((origin_text, destination_text, *signal_parts))

@@ -31,7 +31,9 @@ def run(
             found = adapter.fetch()
             campaigns.extend(found)
             successful_airlines.add(adapter.airline)
-            print(f"[OK] {adapter.airline}: {len(found)} campaigns")
+            high = sum(c.relevance == "HIGH" for c in found)
+            alerts = sum(c.notify for c in found)
+            print(f"[OK] {adapter.airline}: {len(found)} campaigns; HIGH={high}; notify={alerts}")
         except Exception as exc:
             failures[adapter.airline] = str(exc)
             print(f"[WARN] {adapter.airline}: {exc}", file=sys.stderr)
@@ -40,6 +42,12 @@ def run(
         print("[ERROR] 所有航空公司均抓取失败；保留原状态。", file=sys.stderr)
         return 2
 
+    for airline in ("ANA", "JAL"):
+        if airline in successful_airlines:
+            relevant = sum(c.airline == airline and c.notify for c in campaigns)
+            print(f"[HEALTH] {airline}: parsed successfully, actionable campaigns={relevant}")
+        else:
+            print(f"[HEALTH] {airline}: source unavailable or no cards parsed; check [WARN] above", file=sys.stderr)
     new_state, changes = reconcile(old_state, campaigns, successful_airlines)
     state_changed = save_state_if_changed(state_path, old_state, new_state)
     csv_changed = save_csv_if_changed(csv_path, new_state)
