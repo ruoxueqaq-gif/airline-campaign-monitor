@@ -679,6 +679,43 @@
       "travel_period_zh": "",
       "url": "https://www.flyscoot.com/flights/en-sg/scoot-travel-deals?utm_source=website&utm_medium=homepage_promo_tile&utm_campaign=scoot_travel_deals"
     },
+    "7cf8d75d239f6cbefcdf": {
+      "active": true,
+      "airline": "AirAsia",
+      "booking_period": "",
+      "booking_period_zh": "",
+      "content_hash": "acad974e5fc12745d2e2351ab1077c2671e0a1c7f6cf336fc8f4e1710967c453",
+      "core_route_change": false,
+      "deal_strength": "NORMAL",
+      "destination_match": [
+        "日本",
+        "东南亚"
+      ],
+      "first_seen": "2026-10-12",
+      "has_explicit_price": false,
+      "has_promotion": false,
+      "id": "7cf8d75d239f6cbefcdf",
+      "last_changed": "2026-10-12",
+      "matched_destinations": [
+        "日本",
+        "东南亚"
+      ],
+      "matched_origins": [],
+      "missing_runs": 0,
+      "notify": false,
+      "origin_match": [],
+      "reason": "无中国大陆核心或次级出发地 + 日本 + 东南亚目的地 + 仅境外航线变化",
+      "relevance": "LOW",
+      "relevance_score": 0,
+      "summary": "聖誕跨年、滑雪旺季來了！AirAsia台北－大阪增班，赴日運能再升級 台灣，2026年10月8日訊 –每年年底向來是台灣旅客出國旅遊旺季，從聖誕節、跨年假期到冬季賞雪、滑雪行程，日本及東南亞旅遊需求持續升溫。連續17年獲Skytrax評選為「世界最佳低成本航空公司」的AirAsia因應冬季旅遊熱潮，進一步提升台灣航線運能，吉隆坡-台北-大阪航線將於2026年11月22日至2027年2月24日期間，每週一、三增加航班，提供旅客更多元、彈性的關西旅遊選擇。 Read More 繁體中文 Jessica Tseng October 12, 2026 News",
+      "summary_zh": "聖誕跨年、滑雪旺季來了！AirAsia台北－大阪增班，赴日運能再升級 台灣，2026年10月8日訊 –每年年底向來是台灣旅客出國旅遊旺季，從聖誕節、跨年假期到冬季賞雪、滑雪行程，日本及東南亞旅遊需求持續升溫。連續17年獲Skytrax評選為「世界最佳低成本航空公司」的AirAsia因應冬季旅遊熱潮，進一步提升台灣航線運能，吉隆坡-台北-大阪航線將於2026年11月22日至2027年2月24日期間，每週一、三增加航班，提供旅客更多元、彈性的關西旅遊選擇。 Read More 繁體中文 Jessica Tseng October 12, 2026 News",
+      "title": "聖誕跨年、滑雪旺季來了！AirAsia台北－大阪增班，赴日運能再升級",
+      "title_zh": "聖誕跨年、滑雪旺季來了！AirAsia台北－大阪增班，赴日運能再升級",
+      "translation_pending": false,
+      "travel_period": "",
+      "travel_period_zh": "",
+      "url": "https://newsroom.airasia.com/news/tpe-kix-add-flight-tc"
+    },
     "7d4ef453dd41c3288083": {
       "active": true,
       "airline": "AirAsia",
