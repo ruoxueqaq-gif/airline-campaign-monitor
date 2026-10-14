@@ -757,43 +757,6 @@
       "travel_period_zh": "",
       "url": "https://newsroom.airasia.com/news/tpe-kix-add-flight-tc"
     },
-    "7d4ef453dd41c3288083": {
-      "active": true,
-      "airline": "AirAsia",
-      "booking_period": "into an exciting chance to win an unbelievable prize: 17 Winners • 17 Trips • 17 Months of free trav",
-      "booking_period_zh": "赢得令人难以置信的奖品的激动人心的机会： 17 名获奖者 • 17 次旅行 • 17 个月的免费旅行",
-      "content_hash": "e6ff7d74939507e112219419a1c3445761c4f643cfe760de283b699f8f95542d",
-      "core_route_change": false,
-      "deal_strength": "NORMAL",
-      "destination_match": [
-        "泰国",
-        "东南亚"
-      ],
-      "first_seen": "2026-09-25",
-      "has_explicit_price": false,
-      "has_promotion": false,
-      "id": "7d4ef453dd41c3288083",
-      "last_changed": "2026-09-25",
-      "matched_destinations": [
-        "泰国",
-        "东南亚"
-      ],
-      "matched_origins": [],
-      "missing_runs": 1,
-      "notify": false,
-      "origin_match": [],
-      "reason": "无中国大陆核心或次级出发地 + 泰国 + 东南亚目的地 + 无明确价格或促销",
-      "relevance": "LOW",
-      "relevance_score": 6,
-      "summary": "AirAsia Celebrates 17 Years as World's Best Low-Cost Airline with ‘Flight Lotto’ Campaign to Win 17 Months, 17 Trips of Free Travel for 17 winners AirAsia is celebrating an incredible milestone—winning the World’s Best Low-Cost Airline by Skytrax for the 17th consecutive year! To say a massive thank you to millions of guests for their loyalty, the airline is rolling out the ‘AirAsia Flight Lotto’ campaign, turning every flight booking into an exciting chance to win an unbelievable prize: 17 Winners • 17 Trips • 17 Months of free travel. Bookings are open now on AirAsia MOVE and all channels! Read More English , Thailand , News Preeyanij Gooltankjaroen September 25, 2026",
-      "summary_zh": "亚航庆祝成为全球最佳低成本航空公司 17 周年，举办“Flight Lotto”活动，为 17 名获奖者赢取 17 个月、17 次免费旅行 亚航正在庆祝一个令人难以置信的里程碑——连续 17 年荣获 Skytrax 评选的全球最佳低成本航空公司！为了向数百万乘客的忠诚表示衷心的感谢，该航空公司推出了“亚航航班乐透”活动，将每次航班预订都变成赢得令人难以置信的奖品的激动人心的机会：17 名获奖者• 17 次旅行• 17 个月的免费旅行。亚航 MOVE 和所有渠道现已开放预订！阅读更多 英语 , 泰国 , 新闻 Preeyanij Gooltankjaroen 九月 25, 2026",
-      "title": "AirAsia Celebrates 17 Years as World's Best Low-Cost Airline with ‘Flight Lotto’ Campaign to Win 17 Months, 17 Trips of Free Travel for 17 winners",
-      "title_zh": "亚航庆祝成为全球最佳低成本航空公司 17 周年，推出“Flight Lotto”活动，为 17 名获奖者赢得 17 个月、17 次免费旅行",
-      "translation_pending": false,
-      "travel_period": "for 17 winners AirAsia is celebrating an incredible milestone—winning the World’s Best Low-Cost Airl",
-      "travel_period_zh": "亚航正在为 17 名获奖者庆祝一个令人难以置信的里程碑——赢得世界最佳低成本航空奖",
-      "url": "https://newsroom.airasia.com/news/airasia-celebrates-17-years-as-worlds-best-low-cost-airline-with-flight-lotto-campaign-to-win-17-months-17-trips-of-free-travel-for-17-winners"
-    },
     "7d8be30bb86bf88ef887": {
       "active": true,
       "airline": "ANA",
