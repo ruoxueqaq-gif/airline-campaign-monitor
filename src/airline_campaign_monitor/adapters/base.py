@@ -11,12 +11,14 @@ from ..http import HttpClient
 from ..models import Campaign, compact_text
 
 DATE_RANGE_PATTERNS = (
-    re.compile(r"(?:销售|购票|预订|预定|出票)(?:日期|期间|时间|期限)?[：:]?\s*([^。；\n]{4,100})", re.I),
+    re.compile(r"(?:销售|购票|预订|预定|出票)(?:日期|期间|时间|期限)\s*[：:]\s*([^。；\n]{4,160})", re.I),
+    re.compile(r"(?:销售|购票|预订|预定|出票)\s*至\s*([^。；\n]{4,160})", re.I),
     re.compile(r"(?:book(?:ing)?|sale)\s+(?:period|dates?)?[：:]?\s*([^.;\n]{4,100})", re.I),
     re.compile(r"(?:販売|予約|購入)(?:期間|受付期間|期限)?[：:]\s*([^。\n]{4,160})", re.I),
 )
 TRAVEL_RANGE_PATTERNS = (
-    re.compile(r"(?:旅行|出行|搭乘|适用|飞行)(?:日期|期间|时间|期限)?[：:]?\s*([^。；\n]{4,100})", re.I),
+    re.compile(r"(?:旅行|出行|搭乘|飞行)(?:日期|期间|时间|期限)\s*[：:]\s*([^。；\n]{4,160})", re.I),
+    re.compile(r"适用(?:日期|期间|时间|期限)\s*[：:]\s*([^。；\n]{4,160})", re.I),
     re.compile(r"travel\s+(?:period|dates?)?[：:]?\s*([^.;\n]{4,100})", re.I),
     re.compile(r"(?:対象搭乗|搭乗|旅行|出発)(?:期間|日|日期)?[：:]\s*([^。\n]{4,160})", re.I),
 )
