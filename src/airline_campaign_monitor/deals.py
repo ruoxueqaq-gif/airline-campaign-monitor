@@ -60,6 +60,23 @@ def extract_dates(text: str) -> list[date]:
     return sorted(found)
 
 
+def _labelled_dates(text: str, *, booking: bool) -> list[date]:
+    """Only use dates explicitly labelled sale/travel; ignore old footnotes."""
+    label = r"(?:销售|购票|预订|预定|出票)" if booking else r"(?:旅行|出行|搭乘|飞行|适用)"
+    pattern = rf"{label}(?:日期|期间|时间|期限)\s*[：:]\s*"
+    for matched in re.finditer(pattern, text, re.I):
+        clause = text[matched.end():matched.end() + 180]
+        clause = re.split(
+            r"(?:旅行|出行|搭乘|飞行|适用|销售|购票|预订|预定|出票)"
+            r"(?:日期|期间|时间|期限)\s*[：:]",
+            clause, maxsplit=1, flags=re.I,
+        )[0]
+        dates = extract_dates(clause)
+        if dates:
+            return dates
+    return []
+
+
 def record_is_expired(record: dict, today: date | None = None) -> bool:
     today = today or date.today()
     if not record.get("active", True):
@@ -70,6 +87,8 @@ def record_is_expired(record: dict, today: date | None = None) -> bool:
     # the sale/booking clause decides whether an offer can still be purchased.
     booking_clause = re.split(r"旅行|出行|搭乘|travel\s+(?:period|date)", booking_text, maxsplit=1, flags=re.I)[0]
     dates = extract_dates(booking_clause)
+    if not dates:
+        dates = _labelled_dates(str(record.get("summary") or ""), booking=True)
     if dates:
         return max(dates) < today
 
@@ -78,10 +97,9 @@ def record_is_expired(record: dict, today: date | None = None) -> bool:
     looks_like_period = bool(re.match(r"^(?:20\d{2}|截至|至\s*20\d{2})", travel_text))
     if travel_dates and looks_like_period:
         return max(travel_dates) < today
-    # Dates in a free-form summary may describe an example, an old footnote,
-    # or the airline's history. Without a structured booking/travel period we
-    # keep the offer until the official listing removes it.
-    return False
+    # Only trust explicit travel labels. An unrelated historical note is unsafe.
+    travel_dates = _labelled_dates(str(record.get("summary") or ""), booking=False)
+    return bool(travel_dates and max(travel_dates) < today)
 
 
 def assess_deal(record: dict) -> DealAssessment:
