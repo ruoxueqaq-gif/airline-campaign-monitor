@@ -38,3 +38,18 @@ def test_adapter_keeps_core_route_resumption_without_sale_word():
     assert campaigns[0].core_route_change is True
     assert campaigns[0].notify is True
 
+
+
+
+def test_ana_does_not_use_casual_buy_word_as_booking_deadline():
+    html = """
+    <article><a href="/zh/cn/plan-book/promotions/sale">
+        <h2>上海出发北美限时特惠</h2>
+        <p>银联卡领券购票再享最高300元立减优惠！
+        销售期间：销售至2024年8月31日
+        旅行期间：2024年9月1日至2024年9月27日</p>
+    </a></article>
+    """
+    sale = AnaAdapter().parse(html, "https://www.ana.co.jp/zh/cn/")[0]
+    assert sale.booking_period.startswith("销售至2024年8月31日")
+    assert sale.travel_period.startswith("2024年9月1日")

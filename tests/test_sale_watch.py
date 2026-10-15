@@ -72,3 +72,60 @@ def test_japanese_booking_period_excludes_travel_period():
     assert "2027年" not in item.booking_period
     assert "2027年7月31日" in item.travel_period
     assert record_is_expired(item.to_record("2026-10-10"), date(2026, 10, 20))
+
+
+
+class StubAnaClient:
+    def __init__(self, pages):
+        self.pages = pages
+
+    def get_text(self, url):
+        if url not in self.pages:
+            raise RuntimeError("source unavailable")
+        return self.pages[url]
+
+
+def test_ana_home_unlinked_current_year_hero_creates_high_priority_campaign():
+    from datetime import date
+    year = date.today().year
+    html = f'<div class="hero"><img alt="11.11年度大促" src="/www2/zh/cn/top/{year}-1111-cpn_hero_cn_pc.jpg"></div>'
+    found = AnaAdapter().parse(html, "https://www.ana.co.jp/zh/cn/")
+    assert len(found) == 1
+    assert found[0].url == AnaAdapter.annual_url(year)
+    assert found[0].relevance == "HIGH"
+    assert found[0].notify is True
+
+
+def test_ana_annual_sale_detail_independent_of_homepage_card():
+    from datetime import date
+    year = date.today().year
+    url = AnaAdapter.annual_url(year)
+    detail_html = f"""
+    <html><head><title>全日空航空ANA 11.11年度大促</title></head><body>
+      <main><h1>全日空航空ANA 11.11年度大促</h1>
+        北京、上海浦东、杭州出发飞往日本各地，
+        中日经济舱往返680元起！
+        销售日期：{year}年10月16日至{year}年10月22日
+        旅行日期：{year}年10月16日至{year+1}年6月24日
+      </main>
+    </body></html>"""
+    homepage = "<html><body>暂无横幅</body></html>"
+    promotions = '<article><a href="/zh/cn/other"><h2>ANA限时优惠活动</h2></a></article>'
+    client = StubAnaClient({
+        "https://www.ana.co.jp/zh/cn/": homepage,
+        "https://www.ana.co.jp/zh/cn/plan-book/promotions/": promotions,
+        url: detail_html,
+    })
+    found = AnaAdapter(client).fetch()
+    annual = next(c for c in found if c.url == url)
+    assert annual.relevance == "HIGH"
+    assert annual.notify
+    assert annual.has_explicit_price
+    assert str(year) in annual.booking_period
+    assert str(year+1) in annual.travel_period
+
+
+def test_ana_historical_footnote_cannot_create_current_year_campaign():
+    html = '<article><a href="/zh/cn/japan"><h2>日本国内航段免费</h2><p>2023年全日空11.11即将推出</p></a></article>'
+    found = AnaAdapter().parse(html, "https://www.ana.co.jp/zh/cn/")
+    assert all("1111-cpn" not in c.url for c in found)

@@ -49,7 +49,13 @@ def render_csv(state: dict, *, best_only: bool = False) -> bytes:
         if record_is_expired(item):
             continue
         assessment = assess_deal(item)
-        if best_only and (assessment.strength != "GREAT" or not assessment.flight_related):
+        important_sale = item.get("relevance") == "HIGH" and (
+            item.get("has_promotion") or item.get("has_explicit_price")
+        )
+        if best_only and (
+            not assessment.flight_related or
+            (assessment.strength != "GREAT" and not important_sale)
+        ):
             continue
         records.append((item, assessment))
     if best_only:

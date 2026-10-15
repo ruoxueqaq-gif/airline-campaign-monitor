@@ -58,3 +58,23 @@ def test_csv_omits_expired_and_best_deals_keeps_only_strong_offers():
     assert "所有航班最高27%折扣" in regular
     assert "所有航班最高27%折扣" in best
     assert "普通会员活动" not in best
+
+
+
+def test_high_priority_low_starting_fare_gets_featured():
+    from datetime import date
+    today = date.today()
+    booking_end = (today + timedelta(days=7)).isoformat()
+    state = {"schema_version": 1, "campaigns": {"sale": {
+        "airline": "ANA",
+        "title": "ANA 11.11年度大促",
+        "summary": "中国出发日本经济舱往返680元起",
+        "booking_period": f"{today.isoformat()} 至 {booking_end}",
+        "active": True,
+        "relevance": "HIGH",
+        "has_explicit_price": True,
+        "has_promotion": True,
+        "url": "https://www.ana.co.jp/zh/cn/plan-book/promotions/2026-1111-cpn/",
+    }}}
+    best = render_csv(state, best_only=True).decode("utf-8-sig")
+    assert "ANA 11.11年度大促" in best
