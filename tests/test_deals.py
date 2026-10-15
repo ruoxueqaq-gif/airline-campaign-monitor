@@ -38,3 +38,24 @@ def test_non_flight_discount_is_not_a_best_fare():
     result = assess_deal({"airline": "Singapore Airlines", "title": "额外行李优惠", "summary": "Baggage allowance 15% off"})
     assert result.strength == "GREAT"
     assert result.flight_related is False
+
+
+
+def test_expired_ana_sale_with_bad_old_booking_field_uses_labelled_summary():
+    record = {
+        "active": True,
+        "title": "北美特惠",
+        "booking_period": "再享最高300元立减优惠！",
+        "summary": "上海出发北美特价 销售期间：销售至2024年8月31日 旅行期间：2024年9月1日至2024年9月27日",
+    }
+    assert record_is_expired(record, date(2026, 10, 15))
+
+
+def test_future_ana_annual_sale_is_kept():
+    record = {
+        "active": True,
+        "title": "ANA 11.11年度大促",
+        "summary": "销售日期：2026年10月16日至2026年10月22日 旅行日期：2026年10月16日至2027年6月24日",
+    }
+    assert not record_is_expired(record, date(2026, 10, 15))
+    assert record_is_expired(record, date(2026, 10, 23))
