@@ -868,41 +868,6 @@
       "travel_period_zh": "",
       "url": "https://newsroom.airasia.com/news/tpe-kix-add-flight-tc"
     },
-    "81778435d19c43961023": {
-      "active": true,
-      "airline": "ANA",
-      "booking_period": "",
-      "booking_period_zh": "",
-      "content_hash": "d6473eaf80d636745a7246102cf874deaa01ceeedf1cf96edafe36c69c35776c",
-      "core_route_change": false,
-      "deal_strength": "GREAT",
-      "destination_match": [
-        "日本"
-      ],
-      "first_seen": "2026-09-21",
-      "has_explicit_price": true,
-      "has_promotion": true,
-      "id": "81778435d19c43961023",
-      "last_changed": "2026-10-15",
-      "matched_destinations": [
-        "日本"
-      ],
-      "matched_origins": [],
-      "missing_runs": 1,
-      "notify": false,
-      "origin_match": [],
-      "reason": "无中国大陆核心或次级出发地 + 日本目的地 + 明确促销价格",
-      "relevance": "LOW",
-      "relevance_score": 13,
-      "summary": "联程购买ANA中国大陆出发经东京/大阪转机 飞往日本国内其他城市的机票 日本国内转机航段票价免费！ 适用航线：北京、上海、广州、深圳、大连、青岛、杭州航线 780元 起 2,900元 起 详细信息 * 2023年全日空中国地区官网11.11促销活动的详细信息，将于2023年11月6日在本网站公布。敬请期待！",
-      "summary_zh": "联程购买ANA中国大陆出发经东京/大阪转机 飞往日本国内其他城市的机票 日本国内转机航段票价免费！ 适用航线：北京、上海、广州、深圳、大连、青岛、杭州航线 780元 起 2,900元 起 详细信息 * 2023年全日空中国地区官网11.11促销活动的详细信息，将于2023年11月6日在本网站公布。敬请期待！",
-      "title": "联程购买ANA中国大陆出发经东京/大阪转机 飞往日本国内其他城市的机票 日本国内转机航段票价免费！",
-      "title_zh": "联程购买ANA中国大陆出发经东京/大阪转机 飞往日本国内其他城市的机票 日本国内转机航段票价免费！",
-      "translation_pending": false,
-      "travel_period": "",
-      "travel_period_zh": "",
-      "url": "https://www.ana.co.jp/zh/cn/plan-book/promotions/japan-domestic-flight-transfer"
-    },
     "841f5dda7970a672333e": {
       "active": true,
       "airline": "AirAsia",
