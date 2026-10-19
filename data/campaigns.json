@@ -51,7 +51,7 @@
         "东南亚"
       ],
       "matched_origins": [],
-      "missing_runs": 0,
+      "missing_runs": 1,
       "notify": false,
       "origin_match": [],
       "reason": "无中国大陆核心或次级出发地 + 东南亚目的地 + 明确促销活动",
@@ -65,6 +65,41 @@
       "travel_period": "",
       "travel_period_zh": "",
       "url": "https://newsroom.airasia.com/news/airasia-celebrates-return-of-ahmedabad-and-amritsar-flights-with-a-special-sale"
+    },
+    "1500cb1ad0bbabf7c193": {
+      "active": true,
+      "airline": "AirAsia",
+      "booking_period": "",
+      "booking_period_zh": "",
+      "content_hash": "3edc42279ff52ea428893e9a6bd7c37241bc4e12b72ea51acf42a831b64f2ef6",
+      "core_route_change": false,
+      "deal_strength": "NORMAL",
+      "destination_match": [
+        "东南亚"
+      ],
+      "first_seen": "2026-10-19",
+      "has_explicit_price": false,
+      "has_promotion": false,
+      "id": "1500cb1ad0bbabf7c193",
+      "last_changed": "2026-10-19",
+      "matched_destinations": [
+        "东南亚"
+      ],
+      "matched_origins": [],
+      "missing_runs": 0,
+      "notify": false,
+      "origin_match": [],
+      "reason": "无中国大陆核心或次级出发地 + 东南亚目的地 + 无明确价格或促销",
+      "relevance": "LOW",
+      "relevance_score": 4,
+      "summary": "AirAsia tawar diskaun sehingga 30 peratus bagi semua tempat duduk dan penerbangan kepada pengembara dari Singapura Menjelang musim percutian hujung tahun dan pengembaraan baharu pada 2027, AirAsia menawarkan lebih penjimatan dan fleksibiliti kepada pengembara dari Singapura menerusi promosi Semua Tempat Duduk, Semua Penerbangan. Nikmati diskaun tambang penerbangan sehingga 30 peratus, pengecualian yuran pertukaran penerbangan untuk satu kali perubahan**, serta diskaun sehingga 30 peratus** bagi Pakej Value untuk pengalaman perjalanan yang lebih mudah dan selesa. Read More Airlines , Bahasa Malaysia , News , Singapore Ahmad Hafiy Ahmad Fezul - October 19, 2026 Singapura",
+      "summary_zh": "AirAsia offers up to 30 percent discount on all seats and flights to travelers from Singapore Ahead of the year-end holiday season and new adventures in 2027, AirAsia is offering more savings and flexibility to travelers from Singapore through its All Seats, All Flights promotion. Enjoy airfare discounts of up to 30 percent, flight change fee waivers for one change**, as well as discounts of up to 30 percent** on Value Packages for an easier and more comfortable travel experience.了解更多 航空公司、马来语、新闻、新加坡 Ahmad Hafiy Ahmad Fezul - 2026 年 10 月 19 日新加坡",
+      "title": "AirAsia tawar diskaun sehingga 30 peratus bagi semua tempat duduk dan penerbangan kepada pengembara dari Singapura",
+      "title_zh": "亚航为来自新加坡的旅客提供高达 30% 的所有座位和航班折扣",
+      "translation_pending": false,
+      "travel_period": "",
+      "travel_period_zh": "",
+      "url": "https://newsroom.airasia.com/news/airasia-tawar-diskaun-sehingga-30-peratus-bagi-semua-tempat-duduk-dan-penerbangan-kepada-pengembara-dari-singapura"
     },
     "19a49203996ee1f695cd": {
       "active": true,
@@ -270,6 +305,41 @@
       "travel_period_zh": "2026年10月16日（周五）至2027年6月24日（周四）中国大陆出发 优势1：中日经济舱往返680元起，公务舱往返3,290元起！ 优势2：旅行日期跨度大！ 优势3：出发当天亦可购票，最长可停留一个月！ * 2026年10月16日（周五）0点（北京时间）起售，请向下滑动网页，浏览航线等信息",
       "url": "https://www.ana.co.jp/zh/cn/plan-book/promotions/2026-1111-cpn/"
     },
+    "36ef4919a5444deb6cbc": {
+      "active": true,
+      "airline": "AirAsia",
+      "booking_period": "As Singaporeans prepare for year-end holidays and 2027 adventures, AirAsia is giving Singapore trave",
+      "booking_period_zh": "在新加坡人为年终假期和 2027 年冒险做准备之际，亚航为新加坡提供旅游服务",
+      "content_hash": "df2b0d72c66f475449960cb99754fe88a5b285bdbe7b720a3aee2520c46f9750",
+      "core_route_change": false,
+      "deal_strength": "GREAT",
+      "destination_match": [
+        "东南亚"
+      ],
+      "first_seen": "2026-10-19",
+      "has_explicit_price": false,
+      "has_promotion": true,
+      "id": "36ef4919a5444deb6cbc",
+      "last_changed": "2026-10-19",
+      "matched_destinations": [
+        "东南亚"
+      ],
+      "matched_origins": [],
+      "missing_runs": 0,
+      "notify": false,
+      "origin_match": [],
+      "reason": "无中国大陆核心或次级出发地 + 东南亚目的地 + 明确促销活动",
+      "relevance": "LOW",
+      "relevance_score": 7,
+      "summary": "AirAsia offers Singapore travellers more flexibility and savings with up to 30% off* All Seats, All Flights sale As Singaporeans prepare for year-end holidays and 2027 adventures, AirAsia is giving Singapore travellers more reasons to book early with its All Seats, All Flights sale, offering up to 30% off* flights, with a one-time change fee waiver** and up to 30% off*** Value Pack for added convenience. Read More Airlines , English , News , Singapore Sammy YE October 19, 2026 Singapore",
+      "summary_zh": "亚航为新加坡旅客提供高达 30% 的折扣* 全座位、全航班促销，为新加坡旅客提供更大的灵活性和节省空间 随着新加坡人为年终假期和 2027 年的冒险之旅做好准备，亚航为新加坡旅客提供更多提前预订全座位、全航班促销的理由，提供高达 30% 的航班折扣*、一次性改签费豁免**以及高达 30% 的折扣***超值套餐，为您带来更多便利。阅读更多 航空公司 , 中文 , 新闻 , 新加坡 Sammy YE 十月 19, 2026 新加坡",
+      "title": "AirAsia offers Singapore travellers more flexibility and savings with up to 30% off* All Seats, All Flights sale",
+      "title_zh": "促销活动（中文翻译暂不可用）",
+      "translation_pending": true,
+      "travel_period": "",
+      "travel_period_zh": "",
+      "url": "https://newsroom.airasia.com/news/airasia-offers-singapore-travellers-more-flexibility-and-savings-with-up-to-30-off-all-seats-all-flights-sale"
+    },
     "3d289c28bc42b30d9d70": {
       "active": true,
       "airline": "ANA",
@@ -436,6 +506,41 @@
       "travel_period": "",
       "travel_period_zh": "",
       "url": "https://www.singaporeair.com/en_UK/cn/ppsclub-krisflyer/use-miles/krisplus"
+    },
+    "501ca652df7afe70c0a2": {
+      "active": true,
+      "airline": "AirAsia",
+      "booking_period": "As year-end travel demand picks up, AirAsia is making holiday travel more accessible with its signat",
+      "booking_period_zh": "随着年末旅行需求的回升，亚航通过其标志让假期旅行变得更加便捷",
+      "content_hash": "480bce8d774edd461c4269bced35c6aa635324e67d2247921c7315eb2100d972",
+      "core_route_change": false,
+      "deal_strength": "GREAT",
+      "destination_match": [
+        "东南亚"
+      ],
+      "first_seen": "2026-10-19",
+      "has_explicit_price": false,
+      "has_promotion": true,
+      "id": "501ca652df7afe70c0a2",
+      "last_changed": "2026-10-19",
+      "matched_destinations": [
+        "东南亚"
+      ],
+      "matched_origins": [],
+      "missing_runs": 0,
+      "notify": false,
+      "origin_match": [],
+      "reason": "无中国大陆核心或次级出发地 + 东南亚目的地 + 明确促销活动",
+      "relevance": "LOW",
+      "relevance_score": 7,
+      "summary": "AirAsia gears up for the year-end holiday season with up to 30% off* in its All Seats, All Flights sale As year-end travel demand picks up, AirAsia is making holiday travel more accessible with its signature All Seats, All Flights sale, offering up to 30% off* flights across its network. Travellers can also elevate their inflight experience with up to 30% off* AirAsia X’s (D7) award-winning Premium Flatbed. Read More Airlines , English , Global , Malaysia , News Sammy YE October 19, 2026 Sepang",
+      "summary_zh": "亚航为年终假期做好准备，全座位、全航班促销提供高达 30% 的折扣* 随着年末旅行需求的回升，亚航通过其标志性的全座位、全航班促销，在整个网络中提供高达 30% 的航班折扣*，让假期旅行变得更加便捷。旅客还可以通过亚航长程 (D7) 屡获殊荣的高级平板床享受高达 30% 的折扣*，提升机上体验。阅读更多 航空公司 , 英语 , 全球 , 马来西亚 , 新闻 Sammy YE 十月 19, 2026 雪邦",
+      "title": "AirAsia gears up for the year-end holiday season with up to 30% off* in its All Seats, All Flights sale",
+      "title_zh": "亚航为年终假期做好准备，所有座位、所有航班促销高达 30% 折扣*",
+      "translation_pending": false,
+      "travel_period": "demand picks up, AirAsia is making holiday travel more accessible with its signature All Seats, All",
+      "travel_period_zh": "需求回升，亚航以其标志性的全座位、全座位服务让假日旅行变得更加便捷",
+      "url": "https://newsroom.airasia.com/news/airasia-gears-up-for-the-year-end-holiday-season-with-up-to-30-off-in-its-all-seats-all-flights-sale"
     },
     "5fdff8d5d79f034168e6": {
       "active": true,
@@ -853,7 +958,7 @@
         "东南亚"
       ],
       "matched_origins": [],
-      "missing_runs": 0,
+      "missing_runs": 1,
       "notify": false,
       "origin_match": [],
       "reason": "无中国大陆核心或次级出发地 + 日本 + 东南亚目的地 + 仅境外航线变化",
@@ -888,7 +993,7 @@
         "东南亚"
       ],
       "matched_origins": [],
-      "missing_runs": 0,
+      "missing_runs": 1,
       "notify": false,
       "origin_match": [],
       "reason": "无中国大陆核心或次级出发地 + 东南亚目的地 + 无明确价格或促销",
@@ -938,6 +1043,41 @@
       "travel_period_zh": "2026年4月1日星期三～2027年3月31日星期三（航班日期） 活动期间乘坐东京（成田）～雅加达航线（JL725/726/729/720航班）的旅客可以免费托运冲浪板装备。",
       "url": "https://www.jal.co.jp/jp/ja/inter/baggage/jkt_surfboard?cp=inter"
     },
+    "934a7ced60585ee799ca": {
+      "active": true,
+      "airline": "AirAsia",
+      "booking_period": "",
+      "booking_period_zh": "",
+      "content_hash": "eee03a17dbf42d9f63a566aa8721c6f3d4a32cb6c666b522978242d612164b35",
+      "core_route_change": false,
+      "deal_strength": "GREAT",
+      "destination_match": [
+        "东南亚"
+      ],
+      "first_seen": "2026-10-19",
+      "has_explicit_price": false,
+      "has_promotion": true,
+      "id": "934a7ced60585ee799ca",
+      "last_changed": "2026-10-19",
+      "matched_destinations": [
+        "东南亚"
+      ],
+      "matched_origins": [],
+      "missing_runs": 0,
+      "notify": false,
+      "origin_match": [],
+      "reason": "无中国大陆核心或次级出发地 + 东南亚目的地 + 明确促销活动",
+      "relevance": "LOW",
+      "relevance_score": 7,
+      "summary": "亚航迎接年终旅游旺季 ‘所有航班，所有机位’优惠最高30%折扣* 随着年终旅游需求逐步升温，亚航推出其招牌 ‘所有航班，所有机位’ 促销，为旅客提供全航线机票最高30%折扣*，让年终假期出游更加轻松实惠。旅客还可享有亚航长程（D7）屡获殊荣的豪华平躺座椅最高30%折扣*，从而进一步提升飞行体验。 Read More Airlines , Malaysia , News , 简体中文 Sammy YE October 19, 2026 Sepang",
+      "summary_zh": "亚航迎接年终旅游旺季 ‘所有航班，所有机位’优惠最高30%折扣* 随着年终旅游需求逐步升温，亚航推出其招牌 ‘所有航班，所有机位’ 促销，为旅客提供全航线机票最高30%折扣*，让年终假期出游更加轻松实惠。旅客还可享有亚航长程（D7）屡获殊荣的豪华平躺座椅最高30%折扣*，从而进一步提升飞行体验。 Read More Airlines , Malaysia , News , 简体中文 Sammy YE October 19, 2026 Sepang",
+      "title": "亚航迎接年终旅游旺季 ‘所有航班，所有机位’优惠最高30%折扣*",
+      "title_zh": "亚航迎接年终旅游旺季 ‘所有航班，所有机位’优惠最高30%折扣*",
+      "translation_pending": false,
+      "travel_period": "",
+      "travel_period_zh": "",
+      "url": "https://newsroom.airasia.com/news/airasia-gears-up-for-the-year-end-holiday-season-with-up-to-30-off-in-its-all-seats-all-flights-sale-sc"
+    },
     "966c6c7f3e315f4b8742": {
       "active": true,
       "airline": "Vietnam Airlines",
@@ -968,6 +1108,43 @@
       "travel_period": "",
       "travel_period_zh": "",
       "url": "https://www.vietnamairlines.com/cn/zh/plan-book/LotuSociety/lotustudents-offers"
+    },
+    "9c345467ae6144c5c07e": {
+      "active": true,
+      "airline": "AirAsia",
+      "booking_period": "these special fares from 19 - 25 October 2026, for travel between 2 November 2026 and 30 September 2",
+      "booking_period_zh": "这些特价机票适用于2026年10月19日至25日，适用于2026年11月2日至9月2日期间的旅行",
+      "content_hash": "227939f47c1cccb6247e0ab4cee32fb0fc55f7baff40bc84f47aab9bb9526d49",
+      "core_route_change": false,
+      "deal_strength": "GREAT",
+      "destination_match": [
+        "泰国",
+        "东南亚"
+      ],
+      "first_seen": "2026-10-19",
+      "has_explicit_price": false,
+      "has_promotion": true,
+      "id": "9c345467ae6144c5c07e",
+      "last_changed": "2026-10-19",
+      "matched_destinations": [
+        "泰国",
+        "东南亚"
+      ],
+      "matched_origins": [],
+      "missing_runs": 0,
+      "notify": false,
+      "origin_match": [],
+      "reason": "无中国大陆核心或次级出发地 + 泰国 + 东南亚目的地 + 明确促销活动 + 仅境外航线变化 + 仅旺季扩张/运力 PR",
+      "relevance": "LOW",
+      "relevance_score": 3,
+      "summary": "Your Next Great Adventure Awaits: AirAsia Launches \"Up to 30%* Off All Seats, All Flights\" for Year-End Getaways and Beyond The joy of year-end travel is fast approaching, and Thai AirAsia (FD) and Thai AirAsia X (XJ) are making your holiday planning easier than ever! We are going all out with our massive \"Up to 30%* Off All Seats, All Flights\" sale, covering every route across our entire network. Whether you're looking to jet off during the high season or lock in your long-awaited 2027 getaways early, this promo delivers the ultimate flexibility and unbeatable value. Book these special fares from 19 - 25 October 2026, for travel between 2 November 2026 and 30 September 2027. Read More Airlines , English , News , Thailand Tada Chaovanapunja October 19, 2026",
+      "summary_zh": "您的下一次伟大冒险正等待着您：亚航为年终度假及其他假期推出“所有座位、所有航班高达 30%* 折扣” 年终旅行的欢乐即将来临，泰国亚洲航空 (FD) 和泰国亚洲航空长程 (XJ) 让您的假期计划比以往更加轻松！我们将全力以赴开展大规模的“所有座位、所有航班最高 30%* 折扣”促销活动，覆盖我们整个网络的每条航线。无论您是想在旺季乘飞机出发，还是提前锁定期待已久的 2027 年假期，此促销活动都能提供终极的灵活性和无与伦比的价值。预订 2026 年 10 月 19 日至 25 日期间的特价机票，适用于 2026 年 11 月 2 日至 2027 年 9 月 30 日期间的旅行。 了解更多 Airlines , English , News , Thai Tada Chaovanapunja October 19, 2026",
+      "title": "Your Next Great Adventure Awaits: AirAsia Launches \"Up to 30%* Off All Seats, All Flights\" for Year-End Getaways and Beyond",
+      "title_zh": "您的下一次伟大冒险正在等待：亚航为年终度假及以后推出“所有座位、所有航班高达 30%* 折扣”",
+      "translation_pending": false,
+      "travel_period": "is fast approaching, and Thai AirAsia (FD) and Thai AirAsia X (XJ) are making your holiday planning",
+      "travel_period_zh": "即将来临，泰国亚洲航空 (FD) 和泰国亚洲航空长程 (XJ) 正在为您制定假期计划",
+      "url": "https://newsroom.airasia.com/news/your-next-great-adventure-awaits-airasia-launches-up-to-30-off-all-seats-all-flights-for-year-end-getaways-and-beyond"
     },
     "aa596648e4378df900cc": {
       "active": true,
@@ -1099,6 +1276,41 @@
       "travel_period_zh": "",
       "url": "https://www.flyscoot.com/zh/krisflyer/spontaneous-escapes"
     },
+    "c9127df38a431656be32": {
+      "active": true,
+      "airline": "AirAsia",
+      "booking_period": "",
+      "booking_period_zh": "",
+      "content_hash": "4c325e79fea7d93d6e58a06cd24ac79a5b6eb03afd0e57b5c36757dc872b2e65",
+      "core_route_change": false,
+      "deal_strength": "GREAT",
+      "destination_match": [
+        "东南亚"
+      ],
+      "first_seen": "2026-10-19",
+      "has_explicit_price": false,
+      "has_promotion": false,
+      "id": "c9127df38a431656be32",
+      "last_changed": "2026-10-19",
+      "matched_destinations": [
+        "东南亚"
+      ],
+      "matched_origins": [],
+      "missing_runs": 0,
+      "notify": false,
+      "origin_match": [],
+      "reason": "无中国大陆核心或次级出发地 + 东南亚目的地 + 无明确价格或促销",
+      "relevance": "LOW",
+      "relevance_score": 4,
+      "summary": "Sambut Liburan Akhir Tahun, AirAsia Hadirkan Diskon hingga 30% untuk Semua Kursi dan Semua Penerbangan di Berbagai Rute Internasional* Berencana liburan akhir tahun? Saatnya mulai merencanakan perjalanan dan menikmati penawaran menarik dari AirAsia! Melalui promo All Seats, All Flights, AirAsia menawarkan diskon hingga 30%* untuk semua kursi dan penerbangan di rute internasional yang dimiliki. Tak hanya itu, tersedia juga diskon hingga 30%* untuk kursi Premium Flatbed andalan AirAsia X (D7) yang telah meraih berbagai penghargaan, untuk pengalaman terbang yang lebih nyaman. Read More Bahasa Indonesia AirAsia Indonesia October 19, 2026 Jakarta",
+      "summary_zh": "迎接年末假期，亚航为各种国际航线*的所有座位和所有航班提供高达 30% 的折扣* 计划年末假期吗？是时候开始计划您的旅行并享受亚航的诱人优惠了！通过“全座位、全航班”促销活动，亚航为其国际航线的所有座位和航班提供高达 30%* 的折扣。不仅如此，亚航长程屡获殊荣的旗舰级高级平躺座椅（D7）还享有高达30%*的折扣，带来更舒适的飞行体验。了解更多 印度尼西亚亚洲航空 印度尼西亚 2026 年 10 月 19 日 雅加达",
+      "title": "Sambut Liburan Akhir Tahun, AirAsia Hadirkan Diskon hingga 30% untuk Semua Kursi dan Semua Penerbangan di Berbagai Rute Internasional*",
+      "title_zh": "迎接年末假期，亚航为各国际航线的所有座位和所有航班提供高达 30% 的折扣*",
+      "translation_pending": false,
+      "travel_period": "",
+      "travel_period_zh": "",
+      "url": "https://newsroom.airasia.com/news/2026/10/19/sambut-liburan-akhir-tahun-airasia-hadirkan-diskon-hingga-30-untuk-semua-kursi-dan-semua-penerbangan-di-berbagai-rute-internasional"
+    },
     "d3b3f8eee1af891917ac": {
       "active": true,
       "airline": "JAL",
@@ -1192,20 +1404,20 @@
       "travel_period_zh": "",
       "url": "https://www.vietnamairlines.com/cn/zh/plan-book/LotuSociety/lotusociates-offers"
     },
-    "ef497a5e5f65fe46cc97": {
+    "ec463b770d6d0e52faed": {
       "active": true,
-      "airline": "JAL",
-      "booking_period": "2026年10月8日（木）00:00～10月18日（日）23:59 ",
-      "booking_period_zh": "2026年10月8日（木）00:00～10月18日（日）23:59 ",
-      "content_hash": "5e30288b334de89ce56d3d75e8935fab0b86aa6d99c918cceca5d3609d323ce0",
+      "airline": "AirAsia",
+      "booking_period": "",
+      "booking_period_zh": "",
+      "content_hash": "eb3f012ea886c23b0cfee8a465dd8337a5df19d0c25c79a36a44f4e552ceee8f",
       "core_route_change": false,
-      "deal_strength": "NORMAL",
+      "deal_strength": "GREAT",
       "destination_match": [],
-      "first_seen": "2026-10-08",
+      "first_seen": "2026-10-19",
       "has_explicit_price": false,
       "has_promotion": true,
-      "id": "ef497a5e5f65fe46cc97",
-      "last_changed": "2026-10-09",
+      "id": "ec463b770d6d0e52faed",
+      "last_changed": "2026-10-19",
       "matched_destinations": [],
       "matched_origins": [],
       "missing_runs": 0,
@@ -1214,14 +1426,14 @@
       "reason": "无中国大陆核心或次级出发地 + 未识别目的地区域 + 明确促销活动",
       "relevance": "LOW",
       "relevance_score": 3,
-      "summary": "JAL海外航空券タイムセール 販売期間：2026年10月8日（木）00:00～10月18日（日）23:59 搭乗期間：2026年10月8日（木）～2027年7月31日（土）※路線ごとに設定する期間が異なります 11日間限定！ホノルル行き往復117,800円～！その他路線もおトクに！ ※詳細は、セール特設ページ内でご確認ください。",
-      "summary_zh": "日航海外航班机票分时销售 销售期间：2026年10月8日（星期四）00:00至2026年10月18日（星期日）23:59 登机期间：2026年10月8日（星期四）至2027年7月31日（星期六） *各航线设定的期间不同。限时11天！檀香山往返117,800日元起！其他路线也能省钱！ *详情请查看特卖页面。",
-      "title": "JAL海外航空券タイムセール",
-      "title_zh": "日航海外机票分时销售",
+      "summary": "AirAsia迎接年底旅遊旺季 全航線全座位7折起 年底出國旅遊優惠開跑！迎接聖誕節、跨年及2027年寒假旅遊旺季，連續17年獲Skytrax評選為「世界最佳低成本航空公司」的AirAsia，即日起推出「全航線、全座位」（All Seats, All Flights）限時促銷7折起，讓旅客輕鬆規劃年底假期及明年海外旅遊行程。此外，AirAsia X（D7）屢獲殊榮的豪華平躺座位（Premium Flatbed）同步推出最高30%折扣，讓旅客以更超值的價格享受舒適飛行體驗。 Read More 繁體中文 Jessica Tseng October 19, 2026 News",
+      "summary_zh": "AirAsia迎接年底旅遊旺季 全航線全座位7折起 年底出國旅遊優惠開跑！迎接聖誕節、跨年及2027年寒假旅遊旺季，連續17年獲Skytrax評選為「世界最佳低成本航空公司」的AirAsia，即日起推出「全航線、全座位」（All Seats, All Flights）限時促銷7折起，讓旅客輕鬆規劃年底假期及明年海外旅遊行程。此外，AirAsia X（D7）屢獲殊榮的豪華平躺座位（Premium Flatbed）同步推出最高30%折扣，讓旅客以更超值的價格享受舒適飛行體驗。 Read More 繁體中文 Jessica Tseng October 19, 2026 News",
+      "title": "AirAsia迎接年底旅遊旺季 全航線全座位7折起",
+      "title_zh": "AirAsia迎接年底旅遊旺季 全航線全座位7折起",
       "translation_pending": false,
-      "travel_period": "2026年10月8日（木）～2027年7月31日（土）※路線ごとに設定する期間が異なります 11日間限定！ホノルル行き往復117,800円～！その他路線もおトクに！ ※詳細は、セール特設ページ内でご確認ください",
-      "travel_period_zh": "2026年10月8日（星期四）～2027年7月31日（星期六）*各航线设定的期间不同。限时11天！檀香山往返117,800日元起！其他路线也能省钱！ *详情请确认特卖页面。",
-      "url": "https://www.jal.co.jp/jp/ja/inter/special/sale?cp=inter"
+      "travel_period": "",
+      "travel_period_zh": "",
+      "url": "https://newsroom.airasia.com/news//up-to-30-off-in-its-all-seats-all-flights-tc"
     },
     "f4937f0688baa616e830": {
       "active": true,
