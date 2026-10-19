@@ -697,47 +697,6 @@
       "travel_period_zh": "",
       "url": "https://www.singaporeair.com/en_UK/cn/ppsclub-krisflyer/krisflyer/krisflyer-students"
     },
-    "6a665c9053d29493a6a8": {
-      "active": true,
-      "airline": "AirAsia",
-      "booking_period": "",
-      "booking_period_zh": "",
-      "content_hash": "1df0f6a479f4465c6fcb258acb4044f90ca4a6c80c693c020f412463f4bf57d3",
-      "core_route_change": false,
-      "deal_strength": "GREAT",
-      "destination_match": [
-        "日本",
-        "泰国",
-        "越南",
-        "东南亚"
-      ],
-      "first_seen": "2026-10-14",
-      "has_explicit_price": false,
-      "has_promotion": true,
-      "id": "6a665c9053d29493a6a8",
-      "last_changed": "2026-10-14",
-      "matched_destinations": [
-        "日本",
-        "泰国",
-        "越南",
-        "东南亚"
-      ],
-      "matched_origins": [],
-      "missing_runs": 1,
-      "notify": false,
-      "origin_match": [],
-      "reason": "无中国大陆核心或次级出发地 + 日本 + 泰国 + 越南 + 东南亚目的地 + 明确促销活动 + 仅境外航线变化 + 仅旺季扩张/运力 PR",
-      "relevance": "LOW",
-      "relevance_score": 3,
-      "summary": "Thai AirAsia Boosts Udon Thani Flights for High Season, Offering Up to 30% Off Direct Flights from Don Mueang, Chiang Mai & Phuket Thai AirAsia is joining the countdown to the Udon Thani World Horticultural Expo 2026. To make travel seamless for visitors, the airline is ramping up flight frequencies and expanding options across its network, connecting travellers directly from Bangkok (Don Mueang) to Udon Thani with up to 6 daily flights, Chiang Mai with 4 weekly flights (Mon, Wed, Fri, Sun), and Phuket with 4 weekly flights (Mon, Tue, Thu, Sat). On top of direct connections, AirAsia offers convenient Fly-Thru options via Don Mueang to 7 key destinations: Krabi, Surat Thani, Singapore, Hanoi, Ho Chi Minh City, Da Nang, and Tokyo—reaffirming its position as the ultimate, most reliable networ",
-      "summary_zh": "泰国亚洲航空在旺季增加乌隆他尼航班，提供从廊曼、清迈和普吉岛出发的直飞航班高达 30% 的折扣 泰国亚洲航空正在加入 2026 年乌隆他尼世界园艺博览会的倒计时。为了让游客享受无缝旅行，该航空公司正在增加航班频率并扩大整个网络的选择，每天有多达 6 趟航班从曼谷（廊曼）直飞乌隆他尼，每周有 4 趟航班从清迈直飞乌隆他尼（周一、周三、周五、周日）和普吉岛，每周 4 班航班（周一、周二、周四、周六）。除了直飞航班外，亚航还提供经廊曼飞往 7 个主要目的地的便捷直飞航班选择：甲米、素叻他尼、新加坡、河内、胡志明市、岘港和东京，再次确立了其作为终极、最可靠网络的地位",
-      "title": "Thai AirAsia Boosts Udon Thani Flights for High Season, Offering Up to 30% Off Direct Flights from Don Mueang, Chiang Mai & Phuket",
-      "title_zh": "泰国亚洲航空旺季增加乌隆/乌隆他尼航班，提供从廊曼、清迈和普吉岛出发的直飞航班高达 30% 的折扣",
-      "translation_pending": false,
-      "travel_period": "seamless for visitors, the airline is ramping up flight frequencies and expanding options across its",
-      "travel_period_zh": "该航空公司正在增加航班频率并扩大其航班选择，为游客提供无缝服务",
-      "url": "https://newsroom.airasia.com/news/thai-airasia-boosts-udon-thani-flights-for-high-season-offering-up-to-30-off-direct-flights-from-don-mueang-chiang-mai-phuket"
-    },
     "712dcbbdec9fb04fec09": {
       "active": true,
       "airline": "Air China",
@@ -1106,43 +1065,6 @@
       "travel_period": "",
       "travel_period_zh": "",
       "url": "https://newsroom.airasia.com/news/thai-airasia-reinforces-position-as-thailands-true-aviation-leader-launching-faaw-ma-faa-mai-music-video-with-fhero-and-lamyai-haithongkham-to-drive-year-end-tourism"
-    },
-    "aa596648e4378df900cc": {
-      "active": true,
-      "airline": "AirAsia",
-      "booking_period": "on All Domestic Routes! To boost domestic tourism during the year-end high season, Thai AirAsia (fli",
-      "booking_period_zh": "国内所有航线！为了在年底旺季期间促进国内旅游业，泰国亚洲航空 (fli",
-      "content_hash": "1a8c5eedbfa0a4e469ffadee1d3634ae6817d5d1b270e3d2e8b846263088f4ce",
-      "core_route_change": false,
-      "deal_strength": "GOOD",
-      "destination_match": [
-        "泰国",
-        "东南亚"
-      ],
-      "first_seen": "2026-10-15",
-      "has_explicit_price": false,
-      "has_promotion": true,
-      "id": "aa596648e4378df900cc",
-      "last_changed": "2026-10-15",
-      "matched_destinations": [
-        "泰国",
-        "东南亚"
-      ],
-      "matched_origins": [],
-      "missing_runs": 1,
-      "notify": false,
-      "origin_match": [],
-      "reason": "无中国大陆核心或次级出发地 + 泰国 + 东南亚目的地 + 明确促销活动 + 仅境外航线变化 + 仅旺季扩张/运力 PR",
-      "relevance": "LOW",
-      "relevance_score": 3,
-      "summary": "AirAsia Invites Thais to “Fly Across Thailand, Heal Your Heart on Every Trip” With a 500 THB Discount Per Booking on All Domestic Routes! To boost domestic tourism during the year-end high season, Thai AirAsia (flight code FD) has teamed up with the Tourism Authority of Thailand (TAT) to launch the exciting “Fly Across Thailand, Heal Your Heart on Every Trip” campaign. Thai travelers can now enjoy a special 500 THB discount per booking on all domestic routes simply by applying the promo code FLYTODOM . This promotion is designed to encourage domestic travel during the festive season. Travelers can apply the code and book their flights from 15 October to 15 December 2026 exclusively via www.airasia.com and the AirAsia MOVE app, with the travel period running from 15 October 2026 to 15 Janua",
-      "summary_zh": "亚航诚邀泰国人“飞越泰国，每次旅行治愈心灵”，所有国内航线每次预订可享 500 泰铢折扣！为推动年末旺季国内旅游业的发展，泰国亚洲航空（航班代码 FD）与泰国旅游局（TAT）合作，推出激动人心的“飞越泰国，每次旅行治愈你的心”活动。现在，泰国旅客只需使用促销代码 FLYTODOM，即可在所有国内航线上每次预订享受 500 泰铢的特别折扣。此次促销活动旨在鼓励节日期间的国内旅行。旅客可仅通过 www.airasia.com 和亚航 MOVE 应用程序申请代码并预订 2026 年 10 月 15 日至 12 月 15 日期间的航班，旅行期限为 2026 年 10 月 15 日至 1 月 15 日",
-      "title": "AirAsia Invites Thais to “Fly Across Thailand, Heal Your Heart on Every Trip” With a 500 THB Discount Per Booking on All Domestic Routes!",
-      "title_zh": "亚航诚邀泰国人“飞越泰国，每次旅行治愈心灵”，所有国内航线每次预订可享 500 泰铢折扣！",
-      "translation_pending": false,
-      "travel_period": "during the festive season",
-      "travel_period_zh": "节日期间",
-      "url": "https://newsroom.airasia.com/news/2026/10/14/airasia-invites-thais-to-fly-across-thailand-heal-your-heart-on-every-trip-with-a-500-thb-discount-per-booking-on-all-domestic-routes"
     },
     "b81c071d4d5bd80a0273": {
       "active": true,
