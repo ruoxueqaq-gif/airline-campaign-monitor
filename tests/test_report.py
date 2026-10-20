@@ -16,6 +16,7 @@ def test_issue_report_contains_required_audit_fields():
         "reason": "核心出发地 PVG + 澳大利亚目的地 + 明确促销价格",
     }
     report = render_report([Change("NEW", campaign)], detected_at="2026-09-23 09:20:00 CST")
+    assert "- 检测时间：2026-09-23\n" in report
     for expected in (
         "检测时间", "变化前", "变化后", "数据来源 URL", "项目名称",
         "航空公司", "出发地", "目的地", "相关度", "优惠力度", "是否有明确价格", "是否通知", "判断原因",

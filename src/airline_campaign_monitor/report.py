@@ -27,7 +27,7 @@ def _snapshot(record: dict | None) -> str:
 
 
 def render_report(changes: list[Change], *, detected_at: str | None = None) -> str:
-    detected_at = detected_at or datetime.now(ZoneInfo("Asia/Shanghai")).strftime("%Y-%m-%d %H:%M:%S %Z")
+    detected_at = (detected_at or datetime.now(ZoneInfo("Asia/Shanghai")).date().isoformat())[:10]
     counts = Counter(change.kind for change in changes)
     lines = [
         "# 航司促销活动更新",

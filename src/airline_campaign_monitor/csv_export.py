@@ -90,8 +90,8 @@ def render_csv(state: dict, *, best_only: bool = False) -> bytes:
                 "reason": record.get("reason", ""),
                 "booking_period": shown(record, "booking_period"),
                 "travel_period": shown(record, "travel_period"),
-                "first_seen": record.get("first_seen", ""),
-                "last_changed": record.get("last_changed", ""),
+                "first_seen": record.get("first_seen", "")[:10],
+                "last_changed": record.get("last_changed", "")[:10],
                 "url": record.get("url", ""),
                 "summary": shown(record, "summary"),
             }
