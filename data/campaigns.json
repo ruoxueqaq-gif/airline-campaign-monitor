@@ -1287,6 +1287,41 @@
       "travel_period_zh": "",
       "url": "https://www.vietnamairlines.com/cn/zh/plan-book/LotuSociety/lotusociates-offers"
     },
+    "ec276accf6f154ce915a": {
+      "active": true,
+      "airline": "Singapore Airlines",
+      "booking_period": "directly through singaporeair",
+      "booking_period_zh": "购票期请以官方页面为准",
+      "content_hash": "264199b22d53ee4e912e190acd083ecc6cbfe9663cdcd96090a7804a8402c2f7",
+      "core_route_change": false,
+      "deal_strength": "GOOD",
+      "destination_match": [
+        "东南亚"
+      ],
+      "first_seen": "2026-10-20",
+      "has_explicit_price": true,
+      "has_promotion": true,
+      "id": "ec276accf6f154ce915a",
+      "last_changed": "2026-10-20",
+      "matched_destinations": [
+        "东南亚"
+      ],
+      "matched_origins": [],
+      "missing_runs": 0,
+      "notify": false,
+      "origin_match": [],
+      "reason": "无中国大陆核心或次级出发地 + 东南亚目的地 + 明确促销价格",
+      "relevance": "LOW",
+      "relevance_score": 11,
+      "summary": "Discover limited-time deals Plan your next getaway to Singapore, Bali or Malé from CNY1,650. With this limited-time promotion, you can secure your travel plans for early 2027 in advance. Book directly through singaporeair.com, mobile app, or WeChat Mini Program to enjoy special round-trip Economy Class fares and make your long-awaited escape a reality. Sales period: 20 October 2026 – 2 November 2026 Departure dates: 9 January 2027 – 7 March 2027 Not applicable for: 1 February 2027 – 10 February 2027 Learn more",
+      "summary_zh": "中文翻译暂不可用，请打开官方链接查看活动详情。",
+      "title": "Discover limited-time deals",
+      "title_zh": "促销活动（中文翻译暂不可用）",
+      "translation_pending": true,
+      "travel_period": "plans for early 2027 in advance",
+      "travel_period_zh": "旅行期请以官方页面为准",
+      "url": "https://www.singaporeair.com/en_UK/cn/plan-travel/local-promotions/special-fares-from-china"
+    },
     "ec463b770d6d0e52faed": {
       "active": true,
       "airline": "AirAsia",
