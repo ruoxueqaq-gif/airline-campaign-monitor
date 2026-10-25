@@ -1,5 +1,7 @@
 # airline-campaign-monitor
 
+[优先查看带重点标记的表](csv/01_重点关注/README.md)
+
 监控航空公司**官方网页**上的机票促销。首次运行只建立 baseline，不推送当前已有活动；后续以 GitHub Issue 通知 `NEW`、`UPDATED`、`EXPIRED`。
 
 ## 监控范围
