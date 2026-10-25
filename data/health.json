@@ -1,12 +1,12 @@
 {
   "repository": "airline-campaign-monitor",
-  "page_generated_at": "2026-10-25T06:20:32+00:00",
-  "workflow_outcome": "not_run_locally",
-  "last_data_check": "",
-  "last_successful_fetch": "",
+  "page_generated_at": "2026-10-25T13:43:58+00:00",
+  "workflow_outcome": "success",
+  "last_data_check": "2026-10-25T13:43:56+00:00",
+  "last_successful_fetch": "2026-10-25T13:43:56+00:00",
   "valid_results": 41,
   "next_check": "北京时间每天约 01:20、09:20、17:20",
   "notes": [],
-  "source_failures": null,
+  "source_failures": 0,
   "pending_notifications": null
 }
