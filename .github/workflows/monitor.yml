@@ -36,7 +36,7 @@ jobs:
 
       - name: Commit data only when changed
         run: |
-          git add data/campaigns.json csv/
+          git add data/ csv/
           if git diff --cached --quiet; then
             echo "Campaign state unchanged."
             exit 0
@@ -44,17 +44,40 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "chore: update airline campaign state"
-          git push
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
 
-      - name: Create notification issue
-        if: ${{ hashFiles('runtime/change.md') != '' }}
+      - name: Deliver pending notifications
+        if: ${{ !cancelled() }}
         env:
           GH_TOKEN: ${{ github.token }}
-          TZ: Asia/Shanghai
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: python -m airline_campaign_monitor.notifications
+      - name: Persist delivery acknowledgements
+        if: ${{ always() && !cancelled() }}
         run: |
-          gh label create alert --description "航司促销监控提醒" --color D73A4A --force
-          gh issue create \
-            --title "[提醒] 航司促销活动更新 - $(date +%F)" \
-            --body-file runtime/change.md \
-            --assignee ruoxueqaq-gif \
-            --label alert
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/ csv/
+          if ! git diff --cached --quiet; then
+            git commit -m "data: preserve pending notifications and delivery state"
+            git pull --rebase origin "${GITHUB_REF_NAME}"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
+
+      - name: Refresh local monitor health
+        if: ${{ always() && !cancelled() && inputs.dry_run != true && inputs.live_check != true }}
+        env:
+          MONITOR_JOB_STATUS: ${{ job.status }}
+        run: python scripts/write_health.py
+      - name: Preserve monitor reports and recovery state
+        if: ${{ always() && !cancelled() && inputs.dry_run != true && inputs.live_check != true }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/ csv/ reports/
+          if ! git diff --cached --quiet; then
+            git commit -m "data: update monitor health and preserve recovery state [skip ci]"
+            git pull --rebase origin "${GITHUB_REF_NAME}"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi

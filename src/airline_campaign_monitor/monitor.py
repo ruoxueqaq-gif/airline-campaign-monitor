@@ -3,11 +3,14 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 import sys
+import json
+from datetime import datetime, timezone
 
 from .adapters import ALL_ADAPTERS
 from .csv_export import save_csv_if_changed
 from .http import HttpClient
-from .report import write_report
+from .report import write_report, render_report
+from .notifications import enqueue
 from .state import load_state, reconcile, save_state_if_changed
 
 
@@ -38,6 +41,18 @@ def run(
             failures[adapter.airline] = str(exc)
             print(f"[WARN] {adapter.airline}: {exc}", file=sys.stderr)
 
+    health_path = state_path.parent / "source_health.json"
+    health = json.loads(health_path.read_text(encoding="utf-8")) if health_path.exists() else {"sources": {}}
+    checked_at = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    health["checked_at"] = checked_at
+    for adapter_class in ALL_ADAPTERS:
+        airline = adapter_class.airline
+        previous = health["sources"].get(airline, {})
+        health["sources"][airline] = {"status": "ok" if airline in successful_airlines else "error",
+            "checked_at": checked_at,
+            "last_successful_fetch": checked_at if airline in successful_airlines else previous.get("last_successful_fetch", "")}
+    health_path.parent.mkdir(parents=True, exist_ok=True)
+    health_path.write_text(json.dumps(health, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     if not successful_airlines:
         print("[ERROR] 所有航空公司均抓取失败；保留原状态。", file=sys.stderr)
         return 2
@@ -60,6 +75,7 @@ def run(
         print(f"[BASELINE] 已保存 {len(campaigns)} 条现有活动，不发送通知。")
     elif notification_changes:
         write_report(report_path, notification_changes)
+        enqueue(state_path.parent / "notification_outbox.json", "[提醒] 航司促销活动更新", render_report(notification_changes))
         print(
             f"[CHANGE] 共 {len(changes)} 条状态变化，其中 {len(notification_changes)} 条满足通知规则；"
             f"报告已写入 {report_path}"
