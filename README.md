@@ -1,83 +1,10 @@
 # airline-campaign-monitor
 
-[优先查看带重点标记的表](csv/01_重点关注/README.md)
+| 入口 | 用途 |
+| --- | --- |
+| [01-CSV：主要查看的表格](01-CSV/01_重点关注/) | 带重点标记的表、明细和历史记录 |
+| [02-代码运行](02-代码运行/) | 配置、代码、测试和运行说明 |
 
-监控航空公司**官方网页**上的机票促销。首次运行只建立 baseline，不推送当前已有活动；后续以 GitHub Issue 通知 `NEW`、`UPDATED`、`EXPIRED`。
+[打开全部 CSV](01-CSV/) · [查看运行说明](02-代码运行/README.md)
 
-## 监控范围
-
-| 航空公司 | 官方入口 | 重点 |
-| --- | --- | --- |
-| ANA | <https://www.ana.co.jp/zh/cn/> | 中国大陆出发、日本及远程航线 |
-| JAL | <https://www.jal.co.jp/ja-jp/campaign/inter.html> | 国际线活动和特别运价 |
-| Vietnam Airlines | <https://www.vietnamairlines.com/zh-cn/> | 中国大陆经越南前往东南亚、澳新、欧洲 |
-| AirAsia | <https://newsroom.airasia.com/news> | 中国大陆往返东南亚促销 |
-| Scoot | <https://www.flyscoot.com/en/promotions> | 中国大陆经新加坡前往东南亚、澳大利亚 |
-| Singapore Airlines | <https://www.singaporeair.com/en_UK/cn/plan-travel/local-promotions/local-promotion-in-china/> | 中国大陆出发的本地促销 |
-| Air China | <https://www.airchina.com.cn/cn/> | 中国大陆出发的国际线促销 |
-
-出发地优先级：核心机场为杭州 HGH、上海浦东 PVG、上海虹桥 SHA；次级机场为南京 NKG、宁波 NGB。目的地第一优先级为日本、东南亚（泰国和越南在东南亚内重点关注）；第二优先级为澳大利亚、新西兰、欧洲和英国；北美、南美和非洲放在最后。仍需结合出发地及明确促销信号判断通知，不会仅凭目的地关键词推送。
-
-每条活动保存 `relevance`（`HIGH / MEDIUM / LOW`）、`deal_strength`（`GREAT / GOOD / NORMAL`）、`origin_match`、`destination_match`、是否有明确价格、是否通知和简短判断原因。核心机场出发权重最高，明确价格/促销和核心机场新开、复航、加密航线会加权；境外机场之间的航线新闻、单纯运力扩张和旺季 PR 会降权。
-
-## 工作方式
-
-- 每家航司一个独立 adapter；一个来源失败不会阻塞其他航司。
-- HTTP 请求配置 User-Agent、连接/读取 timeout，以及针对 429/5xx 的重试退避。
-- 解析活动卡片的标题、链接、摘要、购票期、旅行期和关注地区，不使用整页 HTML hash。
-- 只接受对应航空公司的官方域名链接。
-- 当前有效活动保存在 `data/campaigns.json`；方便人工查看的中文表格集中在 `csv/`。
-- `csv/02_正常/my_campaigns.csv` 列出全部有效活动；`csv/01_重点关注/my_best_deals.csv` 收录 `GREAT` 机票优惠，或 `HIGH` 且有明确促销/价格的机票活动，并按目的地优先级、相关度及优惠力度排序。`my_` 前缀表示建议优先查看。
-- CSV 使用带 BOM 的 UTF-8 编码，可直接用 Excel 打开；航司名称、状态、相关度、优惠力度及外文标题、摘要、日期说明均以中文显示。Issue 报告同样显示中文；官方链接保留原地址。翻译服务临时不可用时显示中文提示并在下次运行重试，不把未翻译原文当作中文内容。
-- `data/campaigns.json` 保留官网原文字段以供核对和变化判定，并保存对应的 `_zh` 展示字段。翻译文字本身的变化不会触发促销更新通知。
-- JSON 和 CSV 内容完全不变时都不会重写，因此 GitHub Actions 不会产生空提交。
-- 某活动连续两次在**成功抓取**的同一航司页面中消失后才标记 `EXPIRED`，降低官网短暂缺块导致的误报。
-- 第一次运行只保存 baseline。第二次起所有变化都会进入状态/CSV，但只有 `HIGH`，或带明确价格/促销/核心机场航线变化的 `MEDIUM` 才生成 `runtime/change.md` 并创建 GitHub Issue。
-- 抓取超时、403、429、5xx、空响应、配额限制或解析失败只写 Actions 日志；失败航司不累计“消失”次数，也不会触发 Issue。
-
-## 本地运行
-
-```bash
-python -m venv .venv
-# Windows: .venv\Scripts\activate
-python -m pip install -e .
-python -m airline_campaign_monitor.monitor
-```
-
-运行测试：
-
-```bash
-python -m pip install -r requirements-dev.txt
-pytest -q
-```
-
-## GitHub Actions
-
-`.github/workflows/monitor.yml` 支持手动 `workflow_dispatch`，并按中国标准时间每天约 `01:20`、`09:20`、`17:20` 运行。工作流需要仓库允许 GitHub Actions 对 contents 和 issues 写入；权限已在 workflow 中声明。
-
-运行顺序：抓取 → 剔除明确过期活动 → 评估相关度和优惠力度 → 更新 JSON、完整 CSV 与精选优惠 CSV → 数据文件有变化才 commit/push → 只有满足通知规则的真实状态变化才创建 Issue。Issue 标题使用 `[提醒] 航司促销活动更新 - YYYY-MM-DD`，自动添加 `alert` label 并指派给 `ruoxueqaq-gif`。
-
-## 状态与变化判定
-
-活动 ID 使用“航空公司 + 规范化官方 URL”，因此同一页面修改标题、摘要、购票期或旅行期时会得到 `UPDATED`，新 URL 是 `NEW`。评分规则本身的升级只会静默更新派生字段，不会制造内容变化 Issue。连续两次缺失后是 `EXPIRED`；抓取失败的航司不会累计缺失次数。同一条未再次发生内容变化的新闻不会重复通知。
-
-## 已知限制
-
-外文展示使用在线翻译服务；翻译失败时以中文提示占位，不能代替官方原文核对。该接口可能限流，失败后会在后续运行重试。官网会改版或启用反爬规则。当前实现坚持 requests + HTML，不引入 Selenium/Playwright；当某家页面结构变化导致无法提取卡片时，该航司会被隔离为失败并保留旧状态，需要更新对应 adapter 的选择器。动态脚本内才出现、且服务端 HTML 完全没有的促销暂时无法识别。
-
-## 2026 双十一重点监测（ANA/JAL）
-
-- ANA 同时检查中文首页、推广活动页和当年 11.11 官方详情页；首页没有链接的当前年份活动图片也可兜底识别；JAL 同时检查中文站首页、国际线活动与特别票价页。
-- 支持只有图片 `alt` 文案的官方促销横幅，并抽取日文 `販売期間/予約期間/搭乗期間`。
-- ANA/JAL **官方中国市场**页面出现以“双十一 / 双11 / 11.11 / Black Friday”为标题的活动时，直接判为 `HIGH` 并通知；日文网站则必须额外出现中国大陆相关线索，避免日本出发促销误报。
-- 旧页面正文中的历年双十一脚注不会单独触发此规则；实际可售性仍需人工核实官网日期与票价。
-- Actions 日志记录每家航司抓取数、`HIGH` 数及可通知数，以及 ANA/JAL 健康概览。抓取成功不等于所有促销都被收录，JS 动态渲染页面仍是已知限制。
-- `.github/workflows/tests.yml` 在推送时运行自动测试，不会在例行监测中反复安装测试依赖。
-
-## 监控状态入口
-
-[查看监控状态、数据覆盖和下一次查询计划](reports/health.md)。状态页面由每次工作流自动更新，来源查询时间与页面生成时间分别保存。
-
-## 本次维护改进
-
-符合现有提醒规则的变化先写入 data/notification_outbox.json。发送失败保留待发送项，下次工作流补发；只有确认 Issue 创建成功或发现已有去重标记后才确认送达。来源健康状态独立记录，不把活动未变化当作没有运行。
+各项目独立运行。GitHub Actions 的隐藏配置保留在根目录 `.github`，查询计划与通知规则沿用原配置。

@@ -1,4 +1,11 @@
 from __future__ import annotations
+
+import sys as _layout_sys
+from pathlib import Path as _LayoutPath
+_layout_sys.path.insert(0, str(_LayoutPath(__file__).resolve().parents[1]))
+_layout_sys.path.insert(0, str(_LayoutPath(__file__).resolve().parents[1] / "src"))
+from airline_campaign_monitor.layout import project_path
+
 from datetime import date, timedelta
 from pathlib import Path
 import sys
@@ -45,7 +52,7 @@ def mark_rows(rows, records, today):
 
 
 def build(root, today):
-    headers, rows = read_table(root / 'csv/01_重点关注/my_best_deals.csv')
+    headers, rows = read_table(project_path(root, 'csv/01_重点关注/my_best_deals.csv'))
     state = json.loads((root / 'data/campaigns.json').read_text(encoding='utf-8'))
     records = {r.get('url'):r for r in state.get('campaigns', {}).values()}
     return {'csv/01_重点关注/01_my_best_deals.csv':table(['重点标记','购票截止日期','截止日期说明']+headers, mark_rows(rows, records, today))}

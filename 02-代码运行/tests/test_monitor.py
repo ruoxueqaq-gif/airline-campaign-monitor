@@ -1,3 +1,10 @@
+
+import sys as _layout_sys
+from pathlib import Path as _LayoutPath
+_layout_sys.path.insert(0, str(_LayoutPath(__file__).resolve().parents[1]))
+_layout_sys.path.insert(0, str(_LayoutPath(__file__).resolve().parents[1] / "src"))
+from airline_campaign_monitor.layout import project_path
+
 import json
 
 from airline_campaign_monitor import monitor
@@ -32,7 +39,7 @@ class BaselineAdapter:
 
 def test_first_run_builds_baseline_without_report(tmp_path, monkeypatch):
     state_path = tmp_path / "data" / "campaigns.json"
-    csv_path = tmp_path / "csv" / "02_正常" / "my_campaigns.csv"
+    csv_path = project_path(tmp_path, "csv") / "02_正常" / "my_campaigns.csv"
     report_path = tmp_path / "change.md"
     monkeypatch.setattr(monitor, "ALL_ADAPTERS", (BaselineAdapter,))
 
