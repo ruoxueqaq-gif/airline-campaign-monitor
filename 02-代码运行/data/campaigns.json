@@ -363,45 +363,6 @@
       "travel_period_zh": "",
       "url": "https://www.ana.co.jp/zh/cn/amc/join-amc"
     },
-    "3f4b6f7552e032a40a5f": {
-      "active": true,
-      "airline": "AirAsia",
-      "booking_period": "",
-      "booking_period_zh": "",
-      "content_hash": "d51c9a1140972c00ea473cbb570275a73f009c6333f70b84ba7576f3a8ca0ce0",
-      "core_route_change": false,
-      "deal_strength": "NORMAL",
-      "destination_match": [
-        "日本",
-        "泰国",
-        "东南亚"
-      ],
-      "first_seen": "2026-10-15",
-      "has_explicit_price": false,
-      "has_promotion": false,
-      "id": "3f4b6f7552e032a40a5f",
-      "last_changed": "2026-10-15",
-      "matched_destinations": [
-        "日本",
-        "泰国",
-        "东南亚"
-      ],
-      "matched_origins": [],
-      "missing_runs": 1,
-      "notify": false,
-      "origin_match": [],
-      "reason": "无中国大陆核心或次级出发地 + 日本 + 泰国 + 东南亚目的地 + 无明确价格或促销",
-      "relevance": "LOW",
-      "relevance_score": 6,
-      "summary": "Taking Convenience to the Skies! 7-Eleven Thailand & AirAsia Team Up for the \"M-Stamp to JAPAN\" Campaign – Fly Free & Sip Your Favorite All Café Drinks On Board! Get ready for a sky-high collaboration! 7-Eleven Thailand is expanding its reach from your neighborhood straight into the clouds in an exciting partnership with AirAsia. We’re bringing two of All Café’s absolute fan-favorite drinks, along with exclusive limited-edition merchandise , right to your seat on Thai AirAsia and Thai AirAsia X flights. Now, you can enjoy the familiar taste you love while cruising at 35,000 feet. Read More News , Thailand , English Preeyanij Gooltankjaroen October 15, 2026",
-      "summary_zh": "把便利带到天空！泰国 7-11 与亚洲航空联手开展“M-Stamp to JAPAN”活动 – 免费飞行并在机上品尝您最喜欢的所有咖啡厅饮品！准备好进行天价合作吧！泰国 7-11 与亚洲航空建立了令人兴奋的合作伙伴关系，将其服务范围从您的社区直接扩展到云端。我们将 All Café 的两种绝对粉丝最喜爱的饮品以及独家限量版商品直接送到您在泰国亚洲航空和泰国亚洲航空长程航班上的座位上。现在，您可以在 35,000 英尺的高空巡航时享受您喜爱的熟悉味道。阅读更多新闻 , 泰国 , 英语 Preeyanij Gooltankjaroen 十月 15, 2026",
-      "title": "Taking Convenience to the Skies! 7-Eleven Thailand & AirAsia Team Up for the \"M-Stamp to JAPAN\" Campaign – Fly Free & Sip Your Favorite All Café Drinks On Board!",
-      "title_zh": "把便利带到天空！泰国 7-11 与亚洲航空联手开展“M-Stamp to JAPAN”活动 – 免费飞行并在机上品尝您最喜欢的所有咖啡厅饮品！",
-      "translation_pending": false,
-      "travel_period": "",
-      "travel_period_zh": "",
-      "url": "https://newsroom.airasia.com/news/7-eleven-thailand-airasia-team-up-for-the-m-stamp-to-japan-campaign"
-    },
     "439f9d2cad027913c65f": {
       "active": true,
       "airline": "JAL",
@@ -498,41 +459,6 @@
       "travel_period": "",
       "travel_period_zh": "",
       "url": "https://www.singaporeair.com/en_UK/cn/ppsclub-krisflyer/use-miles/krisplus"
-    },
-    "501ca652df7afe70c0a2": {
-      "active": true,
-      "airline": "AirAsia",
-      "booking_period": "As year-end travel demand picks up, AirAsia is making holiday travel more accessible with its signat",
-      "booking_period_zh": "随着年末旅行需求的回升，亚航通过其标志让假期旅行变得更加便捷",
-      "content_hash": "480bce8d774edd461c4269bced35c6aa635324e67d2247921c7315eb2100d972",
-      "core_route_change": false,
-      "deal_strength": "GREAT",
-      "destination_match": [
-        "东南亚"
-      ],
-      "first_seen": "2026-10-19",
-      "has_explicit_price": false,
-      "has_promotion": true,
-      "id": "501ca652df7afe70c0a2",
-      "last_changed": "2026-10-19",
-      "matched_destinations": [
-        "东南亚"
-      ],
-      "matched_origins": [],
-      "missing_runs": 1,
-      "notify": false,
-      "origin_match": [],
-      "reason": "无中国大陆核心或次级出发地 + 东南亚目的地 + 明确促销活动",
-      "relevance": "LOW",
-      "relevance_score": 7,
-      "summary": "AirAsia gears up for the year-end holiday season with up to 30% off* in its All Seats, All Flights sale As year-end travel demand picks up, AirAsia is making holiday travel more accessible with its signature All Seats, All Flights sale, offering up to 30% off* flights across its network. Travellers can also elevate their inflight experience with up to 30% off* AirAsia X’s (D7) award-winning Premium Flatbed. Read More Airlines , English , Global , Malaysia , News Sammy YE October 19, 2026 Sepang",
-      "summary_zh": "亚航为年终假期做好准备，全座位、全航班促销提供高达 30% 的折扣* 随着年末旅行需求的回升，亚航通过其标志性的全座位、全航班促销，在整个网络中提供高达 30% 的航班折扣*，让假期旅行变得更加便捷。旅客还可以通过亚航长程 (D7) 屡获殊荣的高级平板床享受高达 30% 的折扣*，提升机上体验。阅读更多 航空公司 , 英语 , 全球 , 马来西亚 , 新闻 Sammy YE 十月 19, 2026 雪邦",
-      "title": "AirAsia gears up for the year-end holiday season with up to 30% off* in its All Seats, All Flights sale",
-      "title_zh": "亚航为年终假期做好准备，所有座位、所有航班促销高达 30% 折扣*",
-      "translation_pending": false,
-      "travel_period": "demand picks up, AirAsia is making holiday travel more accessible with its signature All Seats, All",
-      "travel_period_zh": "需求回升，亚航以其标志性的全座位、全座位服务让假日旅行变得更加便捷",
-      "url": "https://newsroom.airasia.com/news/airasia-gears-up-for-the-year-end-holiday-season-with-up-to-30-off-in-its-all-seats-all-flights-sale"
     },
     "5fdff8d5d79f034168e6": {
       "active": true,
@@ -921,41 +847,6 @@
       "travel_period": "2026年4月1日（水）～2027年3月31日（水）（ご搭乗日） キャンペーン期間中に東京（成田）－ジャカルタ線（JL725/726/729/720便）をご利用の場合、サーフボード用品を無料でお預けいただけます",
       "travel_period_zh": "2026年4月1日星期三～2027年3月31日星期三（航班日期） 活动期间乘坐东京（成田）～雅加达航线（JL725/726/729/720航班）的旅客可以免费托运冲浪板装备。",
       "url": "https://www.jal.co.jp/jp/ja/inter/baggage/jkt_surfboard?cp=inter"
-    },
-    "934a7ced60585ee799ca": {
-      "active": true,
-      "airline": "AirAsia",
-      "booking_period": "",
-      "booking_period_zh": "",
-      "content_hash": "eee03a17dbf42d9f63a566aa8721c6f3d4a32cb6c666b522978242d612164b35",
-      "core_route_change": false,
-      "deal_strength": "GREAT",
-      "destination_match": [
-        "东南亚"
-      ],
-      "first_seen": "2026-10-19",
-      "has_explicit_price": false,
-      "has_promotion": true,
-      "id": "934a7ced60585ee799ca",
-      "last_changed": "2026-10-19",
-      "matched_destinations": [
-        "东南亚"
-      ],
-      "matched_origins": [],
-      "missing_runs": 1,
-      "notify": false,
-      "origin_match": [],
-      "reason": "无中国大陆核心或次级出发地 + 东南亚目的地 + 明确促销活动",
-      "relevance": "LOW",
-      "relevance_score": 7,
-      "summary": "亚航迎接年终旅游旺季 ‘所有航班，所有机位’优惠最高30%折扣* 随着年终旅游需求逐步升温，亚航推出其招牌 ‘所有航班，所有机位’ 促销，为旅客提供全航线机票最高30%折扣*，让年终假期出游更加轻松实惠。旅客还可享有亚航长程（D7）屡获殊荣的豪华平躺座椅最高30%折扣*，从而进一步提升飞行体验。 Read More Airlines , Malaysia , News , 简体中文 Sammy YE October 19, 2026 Sepang",
-      "summary_zh": "亚航迎接年终旅游旺季 ‘所有航班，所有机位’优惠最高30%折扣* 随着年终旅游需求逐步升温，亚航推出其招牌 ‘所有航班，所有机位’ 促销，为旅客提供全航线机票最高30%折扣*，让年终假期出游更加轻松实惠。旅客还可享有亚航长程（D7）屡获殊荣的豪华平躺座椅最高30%折扣*，从而进一步提升飞行体验。 Read More Airlines , Malaysia , News , 简体中文 Sammy YE October 19, 2026 Sepang",
-      "title": "亚航迎接年终旅游旺季 ‘所有航班，所有机位’优惠最高30%折扣*",
-      "title_zh": "亚航迎接年终旅游旺季 ‘所有航班，所有机位’优惠最高30%折扣*",
-      "translation_pending": false,
-      "travel_period": "",
-      "travel_period_zh": "",
-      "url": "https://newsroom.airasia.com/news/airasia-gears-up-for-the-year-end-holiday-season-with-up-to-30-off-in-its-all-seats-all-flights-sale-sc"
     },
     "966c6c7f3e315f4b8742": {
       "active": true,
