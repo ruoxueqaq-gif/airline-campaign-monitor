@@ -31,6 +31,43 @@
       "travel_period_zh": "",
       "url": "https://act.airchina.com.cn/?activityCode=223376278656&channelCode=3&channelTag=null"
     },
+    "0b3dcd9ebd78a7e021c7": {
+      "active": true,
+      "airline": "AirAsia",
+      "booking_period": "",
+      "booking_period_zh": "",
+      "content_hash": "ebbd4f4cb447ec93b91c55dd0a32a48ea03306aab8973549d9daefb6ec80d778",
+      "core_route_change": false,
+      "deal_strength": "GOOD",
+      "destination_match": [
+        "东南亚",
+        "澳大利亚"
+      ],
+      "first_seen": "2026-10-26",
+      "has_explicit_price": false,
+      "has_promotion": true,
+      "id": "0b3dcd9ebd78a7e021c7",
+      "last_changed": "2026-10-26",
+      "matched_destinations": [
+        "东南亚",
+        "澳大利亚"
+      ],
+      "matched_origins": [],
+      "missing_runs": 0,
+      "notify": false,
+      "origin_match": [],
+      "reason": "无中国大陆核心或次级出发地 + 东南亚 + 澳大利亚目的地 + 明确促销活动",
+      "relevance": "LOW",
+      "relevance_score": 7,
+      "summary": "亚航推出特价航班 促共庆屠妖节 随着屠妖节的到来，亚航推出特票机票*，前往兰卡威、巴厘岛、艾哈迈达巴德、阿姆利则、特里凡得琅、马尔代夫、首尔、墨尔本等热门目的地。无论是与亲朋好友团聚，还是趁着佳节来一趟假期之旅，旅客都可把握机会，以优惠票价开启旅程，与家人朋友共度欢乐时光。 Read More Airlines , Malaysia , News , 简体中文 Vichitra October 26, 2026",
+      "summary_zh": "亚航推出特价航班 促共庆屠妖节 随着屠妖节的到来，亚航推出特票机票*，前往兰卡威、巴厘岛、艾哈迈达巴德、阿姆利则、特里凡得琅、马尔代夫、首尔、墨尔本等热门目的地。无论是与亲朋好友团聚，还是趁着佳节来一趟假期之旅，旅客都可把握机会，以优惠票价开启旅程，与家人朋友共度欢乐时光。 Read More Airlines , Malaysia , News , 简体中文 Vichitra October 26, 2026",
+      "title": "亚航推出特价航班 促共庆屠妖节",
+      "title_zh": "亚航推出特价航班 促共庆屠妖节",
+      "translation_pending": false,
+      "travel_period": "",
+      "travel_period_zh": "",
+      "url": "https://newsroom.airasia.com/news/sc-celebrate-togetherness-this-deepavali-with-airasias-special-fares"
+    },
     "1500cb1ad0bbabf7c193": {
       "active": true,
       "airline": "AirAsia",
@@ -350,7 +387,7 @@
         "东南亚"
       ],
       "matched_origins": [],
-      "missing_runs": 0,
+      "missing_runs": 1,
       "notify": false,
       "origin_match": [],
       "reason": "无中国大陆核心或次级出发地 + 日本 + 泰国 + 东南亚目的地 + 无明确价格或促销",
@@ -482,7 +519,7 @@
         "东南亚"
       ],
       "matched_origins": [],
-      "missing_runs": 0,
+      "missing_runs": 1,
       "notify": false,
       "origin_match": [],
       "reason": "无中国大陆核心或次级出发地 + 东南亚目的地 + 明确促销活动",
@@ -905,7 +942,7 @@
         "东南亚"
       ],
       "matched_origins": [],
-      "missing_runs": 0,
+      "missing_runs": 1,
       "notify": false,
       "origin_match": [],
       "reason": "无中国大陆核心或次级出发地 + 东南亚目的地 + 明确促销活动",
@@ -1342,6 +1379,43 @@
       "travel_period": "",
       "travel_period_zh": "",
       "url": "https://www.singaporeair.com/en_UK/cn/home"
+    },
+    "fc8e1b30a98cdc473918": {
+      "active": true,
+      "airline": "AirAsia",
+      "booking_period": "",
+      "booking_period_zh": "",
+      "content_hash": "dc59f33ddbeace13e67452a9a345d59fcb471a1f0ffefd85700199a84b8ac21f",
+      "core_route_change": false,
+      "deal_strength": "GOOD",
+      "destination_match": [
+        "东南亚",
+        "澳大利亚"
+      ],
+      "first_seen": "2026-10-26",
+      "has_explicit_price": false,
+      "has_promotion": true,
+      "id": "fc8e1b30a98cdc473918",
+      "last_changed": "2026-10-26",
+      "matched_destinations": [
+        "东南亚",
+        "澳大利亚"
+      ],
+      "matched_origins": [],
+      "missing_runs": 0,
+      "notify": false,
+      "origin_match": [],
+      "reason": "无中国大陆核心或次级出发地 + 东南亚 + 澳大利亚目的地 + 明确促销活动",
+      "relevance": "LOW",
+      "relevance_score": 7,
+      "summary": "Celebrate togetherness this Deepavali with AirAsia’s special fares In conjunction with the Festival of Lights, AirAsia is offering special fares* to an array of exciting destinations, including Langkawi, Bali, Ahmedabad, Amritsar, Trivandrum, Maldives, Seoul, Melbourne and much more! Read More Airlines , English , Global , Malaysia , News Vichitra October 26, 2026",
+      "summary_zh": "以亚航特价机票庆祝屠妖节 配合灯光节，亚航将提供飞往一系列令人兴奋的目的地的特价机票*，包括兰卡威、巴厘岛、艾哈迈达巴德、阿姆利则、特里凡得琅、马尔代夫、首尔、墨尔本等等！阅读更多 航空公司 , 英语 , 全球 , 马来西亚 , 新闻 Vichitra 十月 26, 2026",
+      "title": "Celebrate togetherness this Deepavali with AirAsia’s special fares",
+      "title_zh": "搭乘亚航特价机票庆祝屠妖节",
+      "translation_pending": false,
+      "travel_period": "",
+      "travel_period_zh": "",
+      "url": "https://newsroom.airasia.com/news/celebrate-togetherness-this-deepavali-with-airasias-special-fares"
     }
   },
   "schema_version": 1
