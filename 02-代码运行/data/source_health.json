@@ -2,39 +2,39 @@
   "sources": {
     "ANA": {
       "status": "ok",
-      "checked_at": "2026-10-29T21:49:40+00:00",
-      "last_successful_fetch": "2026-10-29T21:49:40+00:00"
+      "checked_at": "2026-10-30T07:09:34+00:00",
+      "last_successful_fetch": "2026-10-30T07:09:34+00:00"
     },
     "JAL": {
       "status": "ok",
-      "checked_at": "2026-10-29T21:49:40+00:00",
-      "last_successful_fetch": "2026-10-29T21:49:40+00:00"
+      "checked_at": "2026-10-30T07:09:34+00:00",
+      "last_successful_fetch": "2026-10-30T07:09:34+00:00"
     },
     "Vietnam Airlines": {
       "status": "ok",
-      "checked_at": "2026-10-29T21:49:40+00:00",
-      "last_successful_fetch": "2026-10-29T21:49:40+00:00"
+      "checked_at": "2026-10-30T07:09:34+00:00",
+      "last_successful_fetch": "2026-10-30T07:09:34+00:00"
     },
     "AirAsia": {
       "status": "ok",
-      "checked_at": "2026-10-29T21:49:40+00:00",
-      "last_successful_fetch": "2026-10-29T21:49:40+00:00"
+      "checked_at": "2026-10-30T07:09:34+00:00",
+      "last_successful_fetch": "2026-10-30T07:09:34+00:00"
     },
     "Scoot": {
       "status": "ok",
-      "checked_at": "2026-10-29T21:49:40+00:00",
-      "last_successful_fetch": "2026-10-29T21:49:40+00:00"
+      "checked_at": "2026-10-30T07:09:34+00:00",
+      "last_successful_fetch": "2026-10-30T07:09:34+00:00"
     },
     "Singapore Airlines": {
       "status": "ok",
-      "checked_at": "2026-10-29T21:49:40+00:00",
-      "last_successful_fetch": "2026-10-29T21:49:40+00:00"
+      "checked_at": "2026-10-30T07:09:34+00:00",
+      "last_successful_fetch": "2026-10-30T07:09:34+00:00"
     },
     "Air China": {
       "status": "ok",
-      "checked_at": "2026-10-29T21:49:40+00:00",
-      "last_successful_fetch": "2026-10-29T21:49:40+00:00"
+      "checked_at": "2026-10-30T07:09:34+00:00",
+      "last_successful_fetch": "2026-10-30T07:09:34+00:00"
     }
   },
-  "checked_at": "2026-10-29T21:49:40+00:00"
+  "checked_at": "2026-10-30T07:09:34+00:00"
 }
